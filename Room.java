@@ -10,7 +10,7 @@ public class Room {
         this.roomName = roomName;
 
     }
-    // Getter Methods
+    // Getter & setter Methods
 
 
     public String getRoomName() {

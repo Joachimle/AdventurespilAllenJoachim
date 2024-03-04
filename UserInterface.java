@@ -11,23 +11,23 @@ public class UserInterface {
         Scanner input = new Scanner(System.in);
         //Scanne-objekt.
 
-        String userInput = input.next();
+        String userInput = input.nextLine();
         input.useDelimiter("\n");
         switch (userInput.toLowerCase()) {
-            case "Go North":
+            case "go north":
                 System.out.println("going North");
             break;
-            case "go West":
+            case  "go west":
                 System.out.println("going west");
             break;
-            case "Go South":
+            case "go south":
                 System.out.println("Going south");
             break;
-            case "Go east":
+            case "go east":
                 System.out.println("Going East");
             break;
             default:
-                System.out.println("Not available path");
+                System.out.println("You cannot go that way");
 
         }
     }

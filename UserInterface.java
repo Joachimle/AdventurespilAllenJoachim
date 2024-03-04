@@ -1,26 +1,17 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class UserInterface {
-
+private Adventure _adventure;
     public UserInterface() {
-        Adventure adventure = new Adventure();
-
-        System.out.println("Welcome to this magical journey");
+        _adventure = new Adventure();
+    }
+    public void userOptionsForDirections(){
         System.out.println("Write 'go north' to go north");
         System.out.println("Write 'go west' to go west");
         System.out.println("Write 'go south' to go south");
         System.out.println("Write 'go east' to go east");
         System.out.println("Write 'Look' to go look around");
-        //System.out.println("Write 'exit' to exit to the main menu");
-        //System.out.println("Write 'help' to open the help menu");
-
-
-        Scanner input = new Scanner(System.in);
-        String userInput = input.nextLine();
-        input.useDelimiter("\n");
-        switch (userInput.toLowerCase()) {
-
+    }
+    public boolean processUserInput (String input) {
+        switch (input.toLowerCase()) {
             case "go north":
                 System.out.println("Going North");
                 break;
@@ -40,10 +31,12 @@ public class UserInterface {
                 System.out.println("***Under construction***");
                 break;
             case "look":
-                System.out.println(adventure.look());
+                System.out.println(_adventure.look());
                 break;
             default:
                 System.out.println("You cannot go that way, try again");
+                return false;
         }
+        return true;
     }
 }

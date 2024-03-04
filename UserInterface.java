@@ -20,13 +20,13 @@ public class UserInterface {
         input.useDelimiter("\n");
         switch (userInput.toLowerCase()) {
             case "go north":
-                System.out.println("going North");
+                System.out.println("Going North");
                 break;
             case "go west":
-                System.out.println("going west");
+                System.out.println("Going West");
                 break;
             case "go south":
-                System.out.println("Going south");
+                System.out.println("Going South");
                 break;
             case "go east":
                 System.out.println("Going East");
@@ -38,7 +38,7 @@ public class UserInterface {
                 System.out.println("***Under construction***");
                 break;
                 case "look":
-                System.out.println("You had a look around, but you found nothing of importance");
+                System.out.println("***Under construction***");
                 break;
             default:
                 System.out.println("You cannot go that way, try again");

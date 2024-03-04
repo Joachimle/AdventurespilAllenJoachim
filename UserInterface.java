@@ -10,8 +10,9 @@ public class UserInterface {
         System.out.println("Write 'go west' to go west");
         System.out.println("Write 'go south' to go south");
         System.out.println("Write 'go east' to go east");
-        System.out.println("Write 'exit' to exit to the main menu");
-        System.out.println("Write 'help' to open the help menu");
+        System.out.println("Write 'Look' to go look around");
+        //System.out.println("Write 'exit' to exit to the main menu");
+        //System.out.println("Write 'help' to open the help menu");
 
 
         Scanner input = new Scanner(System.in);
@@ -35,6 +36,9 @@ public class UserInterface {
                 break;
             case "help":
                 System.out.println("***Under construction***");
+                break;
+                case "look":
+                System.out.println("You had a look around, but you found nothing of importance");
                 break;
             default:
                 System.out.println("You cannot go that way, try again");

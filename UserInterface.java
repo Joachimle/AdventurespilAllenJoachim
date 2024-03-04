@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class UserInterface {
 
     public UserInterface() {
+        Adventure adventure = new Adventure();
 
         System.out.println("Welcome to this magical journey");
         System.out.println("Write 'go north' to go north");
@@ -19,6 +20,7 @@ public class UserInterface {
         String userInput = input.nextLine();
         input.useDelimiter("\n");
         switch (userInput.toLowerCase()) {
+
             case "go north":
                 System.out.println("Going North");
                 break;
@@ -37,8 +39,8 @@ public class UserInterface {
             case "help":
                 System.out.println("***Under construction***");
                 break;
-                case "look":
-                System.out.println("***Under construction***");
+            case "look":
+                System.out.println(adventure.look());
                 break;
             default:
                 System.out.println("You cannot go that way, try again");

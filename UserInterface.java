@@ -13,7 +13,6 @@ boolean gameIsRunning = true;
         System.out.println("Write 'go south' to go south");
         System.out.println("Write 'go east' to go east");
         System.out.println("Write 'Look' to go look around");
-        System.out.println("Write 'start game' to go start game");
     }
 
     public void processUserInput () {
@@ -31,8 +30,10 @@ boolean gameIsRunning = true;
                     }
                     break;
                 case "go west":
-                    System.out.println("Going West");
-                    adventure.currentRoom.getWest();
+                    if (adventure.currentRoom.getWest() != null) {
+                        adventure.currentRoom = adventure.currentRoom.getWest();
+                        System.out.println("Going North");
+                    }
                     break;
                 case "go south":
                     if (adventure.currentRoom.getSouth() != null) {
@@ -41,8 +42,10 @@ boolean gameIsRunning = true;
                     }
                     break;
                 case "go east":
-                    System.out.println("Going East");
-                    adventure.currentRoom.getEast();
+                    if (adventure.currentRoom.getEast() != null) {
+                        adventure.currentRoom = adventure.currentRoom.getEast();
+                        System.out.println("Going East");
+                    }
                     break;
                 case "exit":
                     System.exit(0);

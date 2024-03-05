@@ -14,15 +14,19 @@ private Adventure adventure;
         switch (input.toLowerCase()) {
             case "go north":
                 System.out.println("Going North");
+                adventure.currentRoom.getNorth();
                 break;
             case "go west":
                 System.out.println("Going West");
+                adventure.currentRoom.getWest();
                 break;
             case "go south":
                 System.out.println("Going South");
+                adventure.currentRoom.getSouth();
                 break;
             case "go east":
                 System.out.println("Going East");
+                adventure.currentRoom.getEast();
                 break;
             case "exit":
                 System.exit(0);

@@ -1,9 +1,6 @@
 public class Adventure {
     //opret et enkelt room-objekt i Adventure. Lad det være currentRoom, som spilleren befinder sig i. Udskriv navn og beskrivelse når spilleren skriver "look".
-    Room currentRoom = new Room("'THIS IS ROOM 1'",
-            "You find yourself in a dimly lit tavern, \n" +
-                    "the air thick with the scent of ale and wood smoke. \n" +
-                    "The room is cozy, yet worn, with rough-hewn wooden beams overhead.");
+    Room currentRoom;
 
     public void Adventure() {
     }
@@ -25,6 +22,7 @@ public class Adventure {
         Room room7 = new Room("room7", "");
         Room room8 = new Room("room8", "");
         Room room9 = new Room("room9", "");
+        currentRoom = room1;
 
 
         //Romms skal være forbundet til hinanden som på billedet

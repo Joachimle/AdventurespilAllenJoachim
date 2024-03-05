@@ -1,7 +1,7 @@
 public class UserInterface {
-private Adventure _adventure;
+private Adventure adventure;
     public UserInterface() {
-        _adventure = new Adventure();
+        adventure = new Adventure();
     }
     public void userOptionsForDirections(){
         System.out.println("Write 'go north' to go north");
@@ -31,7 +31,7 @@ private Adventure _adventure;
                 System.out.println("***Under construction***");
                 break;
             case "look":
-                System.out.println(_adventure.look());
+                System.out.println(adventure.look());
                 break;
             default:
                 System.out.println("You cannot go that way, try again");

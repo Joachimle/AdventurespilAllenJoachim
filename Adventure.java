@@ -29,6 +29,7 @@ public class Adventure {
 
         //Romms skal være forbundet til hinanden som på billedet
         room1.setEast(room2);
+        room1.setSouth(room4);
         room2.setWest(room1);
         room2.setEast(room3);
         room3.setWest(room2);
@@ -43,7 +44,6 @@ public class Adventure {
         room8.setWest(room7);
         room8.setNorth(room5);
         room8.setEast(room9);
-        room8.setWest(room7);
         room9.setWest(room8);
         room9.setNorth(room6);
     }

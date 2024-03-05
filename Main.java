@@ -7,7 +7,10 @@ public class Main {
         startGame.userOptionsForDirections();
         startGame.processUserInput();
 
-        /*while (true) {
+
+
+        //malthes gamle noter.
+       /* while (true) {
             Scanner input = new Scanner(System.in);
             String userInput = input.next();
             input.useDelimiter("\n");

@@ -2,7 +2,7 @@ public class Adventure {
     //opret et enkelt room-objekt i Adventure. Lad det være currentRoom, som spilleren befinder sig i. Udskriv navn og beskrivelse når spilleren skriver "look".
     Room currentRoom;
 
-    public void Adventure() {
+    public Adventure() {
         createRoom();
     }
 

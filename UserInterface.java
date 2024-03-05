@@ -4,7 +4,6 @@ public class UserInterface {
 //private Adventure adventure;
     Adventure adventure = new Adventure();
 boolean gameIsRunning = true;
-Room room;
     public UserInterface() {
         adventure = new Adventure();
     }
@@ -20,8 +19,10 @@ Room room;
     public void processUserInput () {
         while (gameIsRunning) {
             Scanner scanner = new Scanner(System.in);
+            //scanner.useDelimiter("\n");
             String command;
             command = scanner.nextLine().toLowerCase();
+
             switch (command) {
                 case "go north":
                     if (adventure.currentRoom.getNorth() != null) {

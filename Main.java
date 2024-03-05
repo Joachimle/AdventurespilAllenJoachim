@@ -5,10 +5,11 @@ public class Main {
         UserInterface startGame = new UserInterface();
         System.out.println("Welcome");
         startGame.userOptionsForDirections();
+        startGame.processUserInput();
 
-        while (true) {
+        /*while (true) {
             Scanner input = new Scanner(System.in);
-            String userInput = input.nextLine();
+            String userInput = input.next();
             input.useDelimiter("\n");
             boolean result = startGame.processUserInput(userInput);
             if (result) {
@@ -17,6 +18,6 @@ public class Main {
                 //User input not OK; retry
             }
             startGame.userOptionsForDirections();
-        }
+        }*/
     }
 }

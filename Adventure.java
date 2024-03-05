@@ -3,6 +3,7 @@ public class Adventure {
     Room currentRoom;
 
     public void Adventure() {
+        createRoom();
     }
 
     public String look() {
@@ -12,9 +13,9 @@ public class Adventure {
 
     // Opret de otte andre room-objekter, med navne og beskrivelser, og forbind dem
 
-    public void CreateRoom() {
-        Room room1 = new Room(" room1", "");
-        Room room2 = new Room(" room2", "");
+    public void createRoom() {
+        Room room1 = new Room("room1", "");
+        Room room2 = new Room("room2", "");
         Room room3 = new Room("room3", "");
         Room room4 = new Room("room4", "");
         Room room5 = new Room("room5", "");
@@ -25,7 +26,7 @@ public class Adventure {
         currentRoom = room1;
 
 
-        //Romms skal være forbundet til hinanden som på billedet
+        //Rooms skal være forbundet til hinanden som på billedet
         room1.setEast(room2);
         room1.setSouth(room4);
         room2.setWest(room1);
@@ -44,5 +45,9 @@ public class Adventure {
         room8.setEast(room9);
         room9.setWest(room8);
         room9.setNorth(room6);
+    }
+
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
 }

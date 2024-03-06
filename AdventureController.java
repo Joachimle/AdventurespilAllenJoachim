@@ -10,6 +10,10 @@ public class AdventureController {
         String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
         return look;
     }
+    public UserInterface processUserInput (){
+        UserInterface startGame = new UserInterface();
+        return startGame;
+    }
 
     // Opret de otte andre room-objekter, med navne og beskrivelser, og forbind dem
 

@@ -5,24 +5,22 @@ public class Player {
     //Player objekt
     private Player move, look;
 
-    Map currentRoom;
-
-    public String look() {
-        String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
-        return look;
-    }
+    Room currentRoom;
 
     //public String move() {
       //  String move = (currentRoom.getRoomName() +
-
 
     //CONSTRUCTOR
     public Player() {
 
     }
-
     public void createPlayer() {
         Player player1 = new Player();
+    }
+
+    public String look() {
+        String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
+        return look;
     }
 
 

@@ -1,8 +1,9 @@
 public class Map {
+    //Attributes
     Room currentRoom;
 
 
-
+    //Methods
     public void createRoom() {
         Room room1 = new Room("room1", "");
         Room room2 = new Room("room2", "");

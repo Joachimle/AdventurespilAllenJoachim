@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class UserInterface {
-Adventure adventure = new Adventure();
+AdventureController adventure = new AdventureController();
 boolean gameIsRunning = true;
     public void processUserInput () {
         while (gameIsRunning) {
@@ -57,6 +57,6 @@ boolean gameIsRunning = true;
         System.out.println("Write 'Look' to go look around");
     }
     public UserInterface() {
-        adventure = new Adventure();
+        adventure = new AdventureController();
     }
 }

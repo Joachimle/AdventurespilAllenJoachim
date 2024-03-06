@@ -1,25 +1,18 @@
 public class Player {
 
     //Attributes
-    private Player move, look;
-
     public Map map;
     private Room currentRoom;
+   private Player player;
 
     //CONSTRUCTOR
-    public Player() {
-        map = new Map();
-    }
+    public Player() {map = new Map();}
 
     //look-method
     public String look() {
         String look = (map.getCurrentRoom().getRoomName() + map.getCurrentRoom().getRoomDiscription());
         return look;
     }
-
-    //set room method
-    public Room setCurrentroom(Room room){
-        return currentRoom = room;}
 
     public void move(String direction) {
 
@@ -73,6 +66,7 @@ public class Player {
                 System.out.println(" Invalid direction. Try another one");
         }
     }
+
 }
 
 /*

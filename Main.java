@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        UserInterface startGame = new UserInterface();
+        AdventureController startGame = new AdventureController();
         System.out.println("Welcome");
-        startGame.userOptionsForDirections();
+        startGame.processUserInput().processUserInput();
         startGame.processUserInput();
 
 

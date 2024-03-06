@@ -10,9 +10,6 @@ public class AdventureController {
         String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
         return look;
     }
-    public String look() {
-        String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
-        return look;
 
     }
 }

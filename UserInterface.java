@@ -3,47 +3,44 @@ import java.util.Scanner;
 public class UserInterface {
     //Attributes
     boolean gameIsRunning = true;
-
-    //Map-object
-    Map adventure = new Map();
-    //player-object
-    Player player = new Player();
+    Player player;
+    Scanner scanner;
 
     //Constructor
     public UserInterface() {
-        adventure = new Map();
+        //Player-object
+        player = new Player();
+        scanner = new Scanner(System.in);
+        scanner.useDelimiter("\n");
     }
 
     //Methods
     public void startGame() {
+        String command;
         while (gameIsRunning) {
-            Scanner scanner = new Scanner(System.in);
-            scanner.useDelimiter("\n");
-            String command;
             command = scanner.next().toLowerCase();
-
             switch (command) {
                 case "go north":
-                    if (adventure.currentRoom.getNorth() != null) {
-                        adventure.currentRoom = adventure.currentRoom.getNorth();
+                    if (player.map.currentRoom.getNorth() != null) {
+                        player.map.currentRoom = player.map.currentRoom.getNorth();
                         System.out.println("Going North");
                     }
                     break;
                 case "go west":
-                    if (adventure.currentRoom.getWest() != null) {
-                        adventure.currentRoom = adventure.currentRoom.getWest();
+                    if (player.map.currentRoom.getWest() != null) {
+                        player.map.currentRoom = player.map.currentRoom.getWest();
                         System.out.println("Going North");
                     }
                     break;
                 case "go south":
-                    if (adventure.currentRoom.getSouth() != null) {
-                        adventure.currentRoom = adventure.currentRoom.getSouth();
+                    if (player.map.currentRoom.getSouth() != null) {
+                        player.map.currentRoom = player.map.currentRoom.getSouth();
                         System.out.println("going south");
                     }
                     break;
                 case "go east":
-                    if (adventure.currentRoom.getEast() != null) {
-                        adventure.currentRoom = adventure.currentRoom.getEast();
+                    if (player.map.currentRoom.getEast() != null) {
+                        player.map.currentRoom = player.map.currentRoom.getEast();
                         System.out.println("Going East");
                     }
                     break;

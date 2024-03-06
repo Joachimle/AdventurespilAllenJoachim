@@ -1,10 +1,19 @@
 public class AdventureController {
-
+    //Attributes
+    public Map map;
+    public UserInterface userInterface;
     //UI-Object
-    UserInterface userInterface = new UserInterface();
+
+    //Map-object
 
     //Constructor
     public AdventureController() {
-        Map createMap = new Map();
+        map = new Map();
+        userInterface = new UserInterface();
+
     }
+
+    //Methods
+
+
 }

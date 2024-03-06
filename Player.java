@@ -1,22 +1,17 @@
 public class Player {
     //Attributes
-    private Room currentRoom;
     private Player move, look;
-
-    //Map-object
-    Map map = new Map();
+    public Map map;
 
     //CONSTRUCTOR
     public Player() {
+        map = new Map();
     }
 
-    //Methods
-    public void createPlayer() {
-        Player player1 = new Player();
-    }
-
+    //look-method
     public String look() {
-        String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
+        String look = (map.getCurrentRoom().getRoomName() + map.getCurrentRoom().getRoomDiscription());
         return look;
     }
+
 }

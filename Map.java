@@ -2,8 +2,9 @@ public class Map {
     //Attributes
     Room currentRoom;
     
+    //Constructor
     public Map(){
-        
+        createRoom();
     }
 
 

@@ -24,24 +24,32 @@ public class UserInterface {
                     if (player.map.currentRoom.getNorth() != null) {
                         player.map.currentRoom = player.map.currentRoom.getNorth();
                         System.out.println("Going North");
+                    } else{
+                        System.out.println("You can't go this way");
                     }
                     break;
                 case "go west":
                     if (player.map.currentRoom.getWest() != null) {
                         player.map.currentRoom = player.map.currentRoom.getWest();
                         System.out.println("Going North");
+                    }else{
+                        System.out.println("You can't go this way");
                     }
                     break;
                 case "go south":
                     if (player.map.currentRoom.getSouth() != null) {
                         player.map.currentRoom = player.map.currentRoom.getSouth();
                         System.out.println("going south");
+                    }else{
+                        System.out.println("You can't go this way");
                     }
                     break;
                 case "go east":
                     if (player.map.currentRoom.getEast() != null) {
                         player.map.currentRoom = player.map.currentRoom.getEast();
                         System.out.println("Going East");
+                    }else{
+                        System.out.println("You can't go this way");
                     }
                     break;
                 case "exit":
@@ -54,7 +62,7 @@ public class UserInterface {
                     System.out.println(player.look());
                     break;
                 default:
-                    System.out.println("You cannot go that way, try again");
+                    System.out.println("Your input is invalid");
             }
         }
     }

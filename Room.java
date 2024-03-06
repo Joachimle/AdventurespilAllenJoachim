@@ -2,7 +2,7 @@ public class Room {
     //attributes
     private String roomName;
     private String roomDiscription;
-    private Room north, east, west, south;  // room objekt
+    private Room north, east, west, south;
 
     //Constructor
     public Room(String roomName, String roomDiscription) {

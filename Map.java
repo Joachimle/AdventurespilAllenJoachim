@@ -1,6 +1,10 @@
 public class Map {
     //Attributes
     Room currentRoom;
+    
+    public Map(){
+        
+    }
 
 
     //Methods

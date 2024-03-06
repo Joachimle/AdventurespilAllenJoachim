@@ -1,9 +1,20 @@
 import java.util.Scanner;
 
 public class UserInterface {
-Map adventure = new Map();
-Player player = new Player();
-boolean gameIsRunning = true;
+    //Attributes
+    boolean gameIsRunning = true;
+
+    //Map-object
+    Map adventure = new Map();
+    //player-object
+    Player player = new Player();
+
+    //Constructor
+    public UserInterface() {
+        adventure = new Map();
+    }
+
+    //Methods
     public void startGame() {
         while (gameIsRunning) {
             Scanner scanner = new Scanner(System.in);
@@ -49,14 +60,14 @@ boolean gameIsRunning = true;
                     System.out.println("You cannot go that way, try again");
             }
         }
-    } public void userOptionsForDirections(){
+    }
+
+    public void userOptionsForDirections() {
         System.out.println("Write 'go north' to go north");
         System.out.println("Write 'go west' to go west");
         System.out.println("Write 'go south' to go south");
         System.out.println("Write 'go east' to go east");
         System.out.println("Write 'Look' to go look around");
     }
-    public UserInterface() {
-        adventure = new Map();
-    }
+
 }

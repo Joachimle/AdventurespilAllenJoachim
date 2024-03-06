@@ -1,9 +1,9 @@
 public class AdventureController {
-    //opret et enkelt room-objekt i Adventure. Lad det være currentRoom, som spilleren befinder sig i. Udskriv navn og beskrivelse når spilleren skriver "look".
-    Room currentRoom;
-    //Map createMap = new Map();
+
+    //UI-Object
     UserInterface userInterface = new UserInterface();
 
+    //Constructor
     public AdventureController() {
         Map createMap = new Map();
     }

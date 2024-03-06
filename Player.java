@@ -17,18 +17,18 @@ public class Player {
 
 
     //CONSTRUCTOR
-    public void Player() {
-        ();
+    public Player() {
+
     }
 
-    public void createPlayer() {createPlayer
+    public void createPlayer() {
         Player player1 = new Player();
     }
 
 
-    public void move( String direction){
-        Player room1 = currentRoom.ge
-    }
+    //public void move( String direction){
+    //    Player room1 = currentRoom.ge
+    //}
 
     // public void Player(Room startingRoom) {
     //this.currentRoom = startingRoom;

@@ -1,10 +1,7 @@
 public class Map {
     Room currentRoom;
 
-    public String look() {
-        String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
-        return look;
-    }
+
 
     public void createRoom() {
         Room room1 = new Room("room1", "");

@@ -20,15 +20,38 @@ public class UserInterface {
         while (gameIsRunning) {
             command = scanner.next().toLowerCase();
             switch (command) {
-                case "go direction":
-                    //her skal playerobjektet tilføjes, når player-klassen er færdig.
+
+                //her er playerobjektet tilføjet fra player-klassen
+                case "go north":
+                   player.move("go north");
+                    break;
+
+
+                case "go west":
+                    player.move("go west");
+                    break;
+
+
+                case "go south":
+                    player.move("go south");
+                    break;
+
+
+                case "go east":
+                    player.move("go east");
+                    break;
+
+
                 case "exit":
                     System.exit(0);
                     break;
+
                 case "help":
                     System.out.println("***Under construction***");
-                    System.out.println("please write a direction");
+                    userOptionsForDirections();
+                    System.out.println("please write a new direction");
                     break;
+
                 case "look":
                     System.out.println(player.look());
                     System.out.println("please write a direction");

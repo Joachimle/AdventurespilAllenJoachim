@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        AdventureController startGame = new AdventureController();
+        AdventureController UI = new AdventureController();
         System.out.println("Welcome");
-        startGame.userInterface.userOptionsForDirections();
-        startGame.userInterface.startGame();
+        UI.getUserInterface().userOptionsForDirections();
+        UI.getUserInterface().startGame();
         //hurrah
     }
 }

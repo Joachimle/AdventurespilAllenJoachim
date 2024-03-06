@@ -22,6 +22,7 @@ public class UserInterface {
             switch (command) {
                 case "go north":
                     if (player.map.currentRoom.getNorth() != null) {
+                        System.out.println("please write a direction");
                         player.map.currentRoom = player.map.currentRoom.getNorth();
                         System.out.println("Going North");
                     } else{
@@ -30,6 +31,7 @@ public class UserInterface {
                     break;
                 case "go west":
                     if (player.map.currentRoom.getWest() != null) {
+                        System.out.println("please write a direction");
                         player.map.currentRoom = player.map.currentRoom.getWest();
                         System.out.println("Going North");
                     }else{
@@ -38,6 +40,7 @@ public class UserInterface {
                     break;
                 case "go south":
                     if (player.map.currentRoom.getSouth() != null) {
+                        System.out.println("please write a direction");
                         player.map.currentRoom = player.map.currentRoom.getSouth();
                         System.out.println("going south");
                     }else{
@@ -46,6 +49,7 @@ public class UserInterface {
                     break;
                 case "go east":
                     if (player.map.currentRoom.getEast() != null) {
+                        System.out.println("please write a direction");
                         player.map.currentRoom = player.map.currentRoom.getEast();
                         System.out.println("Going East");
                     }else{
@@ -57,9 +61,11 @@ public class UserInterface {
                     break;
                 case "help":
                     System.out.println("***Under construction***");
+                    System.out.println("please write a direction");
                     break;
                 case "look":
                     System.out.println(player.look());
+                    System.out.println("please write a direction");
                     break;
                 default:
                     System.out.println("Your input is invalid");

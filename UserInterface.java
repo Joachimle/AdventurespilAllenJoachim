@@ -4,7 +4,7 @@ public class UserInterface {
 Map adventure = new Map();
 Player player = new Player();
 boolean gameIsRunning = true;
-    public void processUserInput () {
+    public void startGame() {
         while (gameIsRunning) {
             Scanner scanner = new Scanner(System.in);
             scanner.useDelimiter("\n");

@@ -6,6 +6,5 @@ public class AdventureController {
 
     public AdventureController() {
         Map createMap = new Map();
-        userInterface.processUserInput();
     }
 }

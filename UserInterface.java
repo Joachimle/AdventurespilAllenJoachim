@@ -25,7 +25,7 @@ public class UserInterface {
                         System.out.println("please write a direction");
                         player.map.currentRoom = player.map.currentRoom.getNorth();
                         System.out.println("Going North");
-                    } else{
+                    } else {
                         System.out.println("You can't go this way");
                     }
                     break;
@@ -34,7 +34,7 @@ public class UserInterface {
                         System.out.println("please write a direction");
                         player.map.currentRoom = player.map.currentRoom.getWest();
                         System.out.println("Going North");
-                    }else{
+                    } else {
                         System.out.println("You can't go this way");
                     }
                     break;
@@ -43,7 +43,7 @@ public class UserInterface {
                         System.out.println("please write a direction");
                         player.map.currentRoom = player.map.currentRoom.getSouth();
                         System.out.println("going south");
-                    }else{
+                    } else {
                         System.out.println("You can't go this way");
                     }
                     break;
@@ -52,7 +52,7 @@ public class UserInterface {
                         System.out.println("please write a direction");
                         player.map.currentRoom = player.map.currentRoom.getEast();
                         System.out.println("Going East");
-                    }else{
+                    } else {
                         System.out.println("You can't go this way");
                     }
                     break;
@@ -72,6 +72,7 @@ public class UserInterface {
             }
         }
     }
+
     public void userOptionsForDirections() {
         System.out.println("Write 'go north' to go north");
         System.out.println("Write 'go west' to go west");

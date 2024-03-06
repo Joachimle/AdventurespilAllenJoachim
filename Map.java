@@ -3,7 +3,7 @@ public class Map {
     Room currentRoom;
 
     //Constructor
-    public Map(){
+    public Map() {
         createRoom();
     }
 

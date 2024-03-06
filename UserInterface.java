@@ -72,7 +72,6 @@ public class UserInterface {
             }
         }
     }
-
     public void userOptionsForDirections() {
         System.out.println("Write 'go north' to go north");
         System.out.println("Write 'go west' to go west");

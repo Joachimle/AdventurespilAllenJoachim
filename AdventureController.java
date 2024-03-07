@@ -27,9 +27,17 @@ public class AdventureController {
         this.gamePlayer = gamePlayer;
     }
 
-    public void move(String goNorth) {
+    public void moveNorth(String goNorth) {
         gamePlayer.move("go north");
-
+    }
+    public void moveWest(String goWest) {
+        gamePlayer.move("go west");
+    }
+    public void moveEast(String goEast) {
+        gamePlayer.move("go east");
+    }
+    public void moveSouth(String goSouth) {
+        gamePlayer.move("go south");
     }
 
     public String look() {

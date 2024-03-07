@@ -2,13 +2,34 @@ public class Player {
 
     //Attributes
     private Room currentRoom;
+    private ArrayList<Item> inventory = new ArrayList<>();
 
     //CONSTRUCTOR
     public Player(Room room) {
         currentRoom = room;
     }
 
-    //look-method
+    //Metoder
+
+    // tilføj og fjern items til inventory
+
+    public Item findItemFromInventory(String shortName) {
+        for (Item i : inventory) {
+            if (i.getShortName().equals(shortName)) {
+                return i;
+            }
+        }
+        return null;
+    }
+//removes item from inventory
+    public void removeItemFromInventory(String shortName) {
+        Item item = findItemFromInventory(shortName);
+        inventory.remove(item);
+    }
+
+    public void addToInventory(Item item) {
+        inventory.add(item);
+    }
     public String look() {
         String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
         return look;

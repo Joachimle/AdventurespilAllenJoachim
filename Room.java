@@ -1,14 +1,37 @@
+import java.util.ArrayList;
+
 public class Room {
     //attributes
     private String roomName;
     private String roomDiscription;
     private Room north, east, west, south;
+    private ArrayList<Item> itemList;
 
     //Constructor
     public Room(String roomName, String roomDiscription) {
         this.roomDiscription = roomDiscription;
         this.roomName = roomName;
     }
+    // Metoder
+
+    public void addItemToItemList(Item item) {
+        itemList.add(item);
+    }
+
+    public Item findItemFromItemList(String shortName) {
+        for (Item i : itemList) {
+            if (i.getShortName().equals(shortName)) {
+                return i;
+            }
+        }
+        return null;
+    }
+
+    public void removeItemFromItemList(String shortName) {
+        Item item = findItemFromItemList(shortName);
+        itemList.remove(item);
+        }
+
 
     // Getter & setter Methods
     public String getRoomName() {
@@ -51,9 +74,3 @@ public class Room {
         this.south = south;
     }
 }
-
-
-/*public String toString (){
-    String direction = "";
-    direction*/
-

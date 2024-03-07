@@ -3,20 +3,22 @@ import java.util.Scanner;
 public class UserInterface {
     //Attributes
     boolean gameIsRunning = true;
-    Player player;
     Scanner scanner;
+    AdventureController controller;
 
     //Constructor
     public UserInterface() {
         //Player-object
-        player = new Player();
         scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
+        controller = new AdventureController();
     }
 
     //Methods
     public void startGame() {
         String command;
+        System.out.println("Welcome");
+        userOptionsForDirections();
         while (gameIsRunning) {
             command = scanner.next().toLowerCase();
             switch (command) {
@@ -24,22 +26,22 @@ public class UserInterface {
                 //her er playerobjektet tilføjet fra player-klassen
                 //case 1 - look around.
                 case "go north":
-                   player.move("go north");
+                   controller.moveNorth("go north");
                     break;
 
 
                 case "go west":
-                    player.move("go west");
+                    controller.moveWest("go west");
                     break;
 
 
                 case "go south":
-                    player.move("go south");
+                    controller.moveSouth("go south");
                     break;
 
 
                 case "go east":
-                    player.move("go east");
+                    controller.moveEast("go east");
                     break;
 
 
@@ -54,7 +56,7 @@ public class UserInterface {
                     break;
 
                 case "look":
-                    System.out.println(player.look());
+                    System.out.println(controller.look());
                     System.out.println("please write a direction");
                     break;
                 default:

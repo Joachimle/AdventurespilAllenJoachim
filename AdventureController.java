@@ -2,13 +2,11 @@ public class AdventureController {
     //Attributes
     private Map gameMap;
     private Player gamePlayer;
-    private UserInterface userInterface;
 
     //Constructor
     public AdventureController() {
         gameMap = new Map();
-        gamePlayer = new Player();
-        userInterface = new UserInterface();
+        gamePlayer = new Player(gameMap.getFirstRoom());
     }
 
     //Getters bliver lavet her
@@ -20,10 +18,6 @@ public class AdventureController {
         return gameMap;
     }
 
-    public UserInterface getUserInterface() {
-        return userInterface;
-    }
-
     //Setters bliver lavet her:
     public void setGameMap(Map gameMap) {
         this.gameMap = gameMap;
@@ -33,8 +27,21 @@ public class AdventureController {
         this.gamePlayer = gamePlayer;
     }
 
-    public void setUserInterface(UserInterface userInterface) {
-        this.userInterface = userInterface;
+    public void moveNorth(String goNorth) {
+        gamePlayer.move("go north");
+    }
+    public void moveWest(String goWest) {
+        gamePlayer.move("go west");
+    }
+    public void moveEast(String goEast) {
+        gamePlayer.move("go east");
+    }
+    public void moveSouth(String goSouth) {
+        gamePlayer.move("go south");
+    }
+
+    public String look() {
+        return gamePlayer.look();
     }
     //Methods
 

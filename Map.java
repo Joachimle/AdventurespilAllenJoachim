@@ -1,6 +1,6 @@
 public class Map {
     //Attributes
-    Room currentRoom;
+    private Room firstRoom;
 
     //Constructor
     public Map() {
@@ -19,7 +19,7 @@ public class Map {
         Room room7 = new Room("room7", "");
         Room room8 = new Room("room8", "");
         Room room9 = new Room("room9", "");
-        currentRoom = room1;
+        firstRoom = room1;
 
 
         //Rooms skal være forbundet til hinanden som på billedet
@@ -51,7 +51,7 @@ public class Map {
         room9.setNorth(room6);
     }
 
-    public Room getCurrentRoom() {
-        return currentRoom;
+    public Room getFirstRoom() {
+        return firstRoom;
     }
 }

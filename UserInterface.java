@@ -22,6 +22,7 @@ public class UserInterface {
             switch (command) {
 
                 //her er playerobjektet tilføjet fra player-klassen
+                //case 1 - look around.
                 case "go north":
                    player.move("go north");
                     break;

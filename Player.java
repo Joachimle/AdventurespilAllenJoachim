@@ -1,16 +1,16 @@
 public class Player {
 
     //Attributes
-    public Map map;
     private Room currentRoom;
-    private Player player;
 
     //CONSTRUCTOR
-    public Player() {map = new Map();}
+    public Player(Room room) {
+        currentRoom = room;
+    }
 
     //look-method
     public String look() {
-        String look = (map.getCurrentRoom().getRoomName() + map.getCurrentRoom().getRoomDiscription());
+        String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
         return look;
     }
 
@@ -19,9 +19,9 @@ public class Player {
         switch (direction) {
 
             case "go north":
-                if (this.map.currentRoom.getNorth() != null) {
+                if (currentRoom.getNorth() != null) {
                     System.out.println("please write a direction");
-                    this.map.currentRoom = this.map.currentRoom.getNorth();
+                    currentRoom = currentRoom.getNorth();
                     System.out.println("Going North");
                 } else {
                     System.out.println("You can't go this way");
@@ -30,9 +30,9 @@ public class Player {
 
 
             case "go west":
-                if (this.map.currentRoom.getWest() != null) {
+                if (currentRoom.getWest() != null) {
                     System.out.println("please write a direction");
-                    this.map.currentRoom = this.map.currentRoom.getWest();
+                    currentRoom = currentRoom.getWest();
                     System.out.println("Going west");
                 } else {
                     System.out.println("You can't go this way");
@@ -41,9 +41,9 @@ public class Player {
 
 
             case "go south":
-                if (this.map.currentRoom.getSouth() != null) {
+                if (currentRoom.getSouth() != null) {
                     System.out.println("please write a direction");
-                    this.map.currentRoom = this.map.currentRoom.getSouth();
+                    currentRoom = currentRoom.getSouth();
                     System.out.println("going south");
                 } else {
                     System.out.println("You can't go this way");
@@ -52,9 +52,9 @@ public class Player {
 
 
             case "go east":
-                if (this.map.currentRoom.getEast() != null) {
+                if (currentRoom.getEast() != null) {
                     System.out.println("please write a direction");
-                    this.map.currentRoom = this.map.currentRoom.getEast();
+                    currentRoom = currentRoom.getEast();
                     System.out.println("Going East");
                 } else {
                     System.out.println("You can't go this way");

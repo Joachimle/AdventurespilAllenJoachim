@@ -3,7 +3,7 @@ public class Player {
     //Attributes
     public Map map;
     private Room currentRoom;
-   private Player player;
+    private Player player;
 
     //CONSTRUCTOR
     public Player() {map = new Map();}

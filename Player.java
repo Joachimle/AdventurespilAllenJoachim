@@ -3,9 +3,12 @@ import java.util.ArrayList;
 public class Player {
 
     //Attributes
+    public Map map;
     private Room currentRoom;
     private Player player;
-    private ArrayList<Item> inventory;
+    private ArrayList<Item> inventory = new ArrayList<>();
+
+
 
 
     //CONSTRUCTOR

@@ -5,7 +5,7 @@ public class Room {
     private String roomName;
     private String roomDiscription;
     private Room north, east, west, south;
-    private ArrayList<Item> itemList;
+    private ArrayList<Item> itemList = new ArrayList<>();
 
     //Constructor
     public Room(String roomName, String roomDiscription) {

@@ -9,8 +9,6 @@ public class Player {
     private ArrayList<Item> inventory = new ArrayList<>();
 
 
-
-
     //CONSTRUCTOR
     public Player(Room room) {
         currentRoom = room;
@@ -38,6 +36,10 @@ public class Player {
     public String look() {
         String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
         return look;
+    }
+
+    public ArrayList<Item> showInventory() {
+        return inventory;
     }
 
     public void move(String direction) {
@@ -90,8 +92,6 @@ public class Player {
 
             default:
                 System.out.println(" Invalid direction. Try another one");
-
-
         }
     }
 }

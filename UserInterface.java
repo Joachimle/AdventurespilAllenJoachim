@@ -25,42 +25,35 @@ public class UserInterface {
 
                 //her er playerobjektet tilføjet fra player-klassen
                 //case 1 - look around.
-                case "go north":
-                   controller.moveNorth("go north");
-                    break;
-
-
-                case "go west":
+                case "go north", "n" ->{;
+                    controller.moveNorth("go north");
+                }
+                case "go west", "w" ->{
                     controller.moveWest("go west");
-                    break;
-
-
-                case "go south":
+                }
+                case "go south", "s" -> {
                     controller.moveSouth("go south");
-                    break;
-
-
-                case "go east":
+                }
+                case "go east", "e" -> {
                     controller.moveEast("go east");
-                    break;
-
-
-                case "exit":
+                }
+                case "exit" -> {
                     System.exit(0);
-                    break;
-
-                case "help":
-                    System.out.println("***Under construction***");
-                    userOptionsForDirections();
+                }
+                case "help", "h" -> {
                     System.out.println("please write a new direction");
-                    break;
-
-                case "look":
+                }
+                case "look", "l" -> {
                     System.out.println(controller.look());
                     System.out.println("please write a direction");
-                    break;
-                default:
-                    System.out.println("Your input is invalid");
+                }
+                case "inventory", "inv", "i" -> {
+                    if (controller.getGamePlayer().showInventory().isEmpty()) {
+                        System.out.println("Is empty");
+                    } else
+                    controller.getGamePlayer().showInventory();
+                }
+                default -> System.out.println("Your input is invalid");
             }
         }
     }

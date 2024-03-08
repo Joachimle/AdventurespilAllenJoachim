@@ -40,6 +40,10 @@ public class AdventureController {
         gamePlayer.move("go south");
     }
 
+    public void showPlayerInventory () {
+        gamePlayer.showInventory();
+    }
+
     public String look() {
         return gamePlayer.look();
     }

@@ -3,6 +3,8 @@ public class Item {
     private String shortName;
     private String longName;
 
+
+
     public Item(String longName, String shortName) {
         this.longName = longName;
         this.shortName = shortName;
@@ -23,4 +25,6 @@ public class Item {
     public void setLongName(String longName) {
         this.longName = longName;
     }
+
+
 }

@@ -52,9 +52,9 @@ public class Player {
 
             case "go north":
                 if (currentRoom.getNorth() != null) {
-                    System.out.println("please write a direction");
                     currentRoom = currentRoom.getNorth();
                     System.out.println("Going North");
+                    System.out.println("Please write a new direction if you wanna leave the room");
                 } else {
                     System.out.println("You can't go this way");
                 }
@@ -63,9 +63,9 @@ public class Player {
 
             case "go west":
                 if (currentRoom.getWest() != null) {
-                    System.out.println("please write a direction");
                     currentRoom = currentRoom.getWest();
                     System.out.println("Going west");
+                    System.out.println("Please write a new direction if you wanna leave the room");
                 } else {
                     System.out.println("You can't go this way");
                 }
@@ -74,9 +74,9 @@ public class Player {
 
             case "go south":
                 if (currentRoom.getSouth() != null) {
-                    System.out.println("please write a direction");
                     currentRoom = currentRoom.getSouth();
-                    System.out.println("going south");
+                    System.out.println("Going south");
+                    System.out.println("Please write a new direction if you wanna leave the room");
                 } else {
                     System.out.println("You can't go this way");
                 }
@@ -85,9 +85,9 @@ public class Player {
 
             case "go east":
                 if (currentRoom.getEast() != null) {
-                    System.out.println("please write a direction");
                     currentRoom = currentRoom.getEast();
                     System.out.println("Going East");
+                    System.out.println("Please write a new direction if you wanna leave the room");
                 } else {
                     System.out.println("You can't go this way");
                 }

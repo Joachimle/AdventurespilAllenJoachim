@@ -15,7 +15,7 @@ public class Room {
     // Metoder
 
     public void addItemToCurrentRoom(String item) {
-        itemList.add(new Item("The knife of a thousand daggers", "knife"));
+        itemList.add(new Item("The knife of a thousand daggers", "Knife"));
     }
 
     public Item lookForItemsInCurrentRoom(String shortName) {

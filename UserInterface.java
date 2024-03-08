@@ -41,15 +41,15 @@ public class UserInterface {
                     System.exit(0);
                 }
                 case "help", "h" -> {
-                    System.out.println("please write a new direction");
+                    System.out.println("Please write a direction if you wanna leave the room");
                 }
                 case "look", "l" -> {
                     System.out.println(controller.look());
-                    System.out.println("please write a direction");
+                    System.out.println("Please write a direction if you wanna leave the room");
                 }
                 case "inventory", "inv", "i" -> {
                     if (controller.getGamePlayer().showInventory().isEmpty()) {
-                        System.out.println("Is empty");
+                        System.out.println("Your inventory is empty");
                     } else
                     controller.getGamePlayer().showInventory();
                 }
@@ -64,6 +64,8 @@ public class UserInterface {
         System.out.println("Write 'go south' to go south");
         System.out.println("Write 'go east' to go east");
         System.out.println("Write 'Look' to go look around");
+        System.out.println("Write 'Help' to ask for help");
+        System.out.println("Write Inventory' to look up your inventory");
     }
 
 }

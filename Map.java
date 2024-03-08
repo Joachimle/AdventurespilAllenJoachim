@@ -1,6 +1,7 @@
 public class Map {
     //Attributes
     private Room firstRoom;
+    private Item item;
 
     //Constructor
     public Map() {
@@ -23,8 +24,11 @@ public class Map {
 
 
         //Rooms skal være forbundet til hinanden som på billedet
+        //Room 1
         room1.setEast(room2);
         room1.setSouth(room4);
+        room1.addItemToCurrentRoom("kniv");
+
 
         room2.setWest(room1);
         room2.setEast(room3);
@@ -50,6 +54,9 @@ public class Map {
         room9.setWest(room8);
         room9.setNorth(room6);
     }
+
+    //items i rooms
+
 
     public Room getFirstRoom() {
         return firstRoom;

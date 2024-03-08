@@ -24,7 +24,8 @@ public class Player {
         }
         return null;
     }
-//removes item from inventory
+
+    //removes item from inventory
     public void removeItemFromInventory(String shortName) {
         Item item = findItemFromInventory(shortName);
         inventory.remove(item);
@@ -33,8 +34,11 @@ public class Player {
     public void addToInventory(Item item) {
         inventory.add(item);
     }
+
     public String look() {
-        String look = (currentRoom.getRoomName() + currentRoom.getRoomDiscription());
+        String look = (currentRoom.getRoomName() + "\n"
+                + currentRoom.getRoomDiscription() +"\n"
+                + currentRoom.lookForItemsInCurrentRoom("knife"));
         return look;
     }
 

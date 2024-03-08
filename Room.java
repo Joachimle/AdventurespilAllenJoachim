@@ -14,11 +14,11 @@ public class Room {
     }
     // Metoder
 
-    public void addItemToItemList(Item item) {
-        itemList.add(item);
+    public void addItemToCurrentRoom(String item) {
+        itemList.add(new Item("The knife of a thousand daggers", "knife"));
     }
 
-    public Item findItemFromItemList(String shortName) {
+    public Item lookForItemsInCurrentRoom(String shortName) {
         for (Item i : itemList) {
             if (i.getShortName().equals(shortName)) {
                 return i;
@@ -27,8 +27,8 @@ public class Room {
         return null;
     }
 
-    public void removeItemFromItemList(String shortName) {
-        Item item = findItemFromItemList(shortName);
+    public void deleteItemFromCurrentRoom(String shortName) {
+        Item item = lookForItemsInCurrentRoom(shortName);
         itemList.remove(item);
         }
 

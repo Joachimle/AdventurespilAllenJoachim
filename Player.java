@@ -10,8 +10,9 @@ public class Player {
 
 
     //CONSTRUCTOR
-    public Player(Room room) {
-        currentRoom = room;
+    public Player(Room currentRoom) {
+        this.currentRoom = currentRoom;
+        this.inventory = new ArrayList<>();
     }
 
     //METODER
@@ -31,19 +32,18 @@ public class Player {
         inventory.remove(item);
     }
 
-    public void addToInventory(Item item) {
-        inventory.add(item);
-    }
-
-    public String look() {
-        String look = (currentRoom.getRoomName() + "\n"
-                + currentRoom.getRoomDiscription() +"\n"
-                + currentRoom.lookForItemsInCurrentRoom("knife"));
-        return look;
+    public void addToInventory(String item) {
     }
 
     public ArrayList<Item> showInventory() {
         return inventory;
+    }
+
+    public String look() {
+        String look = (currentRoom.getRoomName() + "\n"
+                + currentRoom.getRoomDiscription() + "\n"
+                + currentRoom.lookForItemsInCurrentRoom("knife"));
+        return look;
     }
 
     public void move(String direction) {

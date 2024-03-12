@@ -5,10 +5,8 @@ public class UserInterface {
     boolean gameIsRunning = true;
     Scanner scanner;
     AdventureController controller;
-
     //Constructor
     public UserInterface() {
-        //Player-object
         scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
         controller = new AdventureController();
@@ -16,6 +14,9 @@ public class UserInterface {
 
     //Methods
     public void startGame() {
+playGame();
+    }
+    public void playGame(){
         String command;
         System.out.println("Welcome");
         userOptionsForDirections();
@@ -25,6 +26,14 @@ public class UserInterface {
 
                 //her er playerobjektet tilføjet fra player-klassen
                 //case 1 - look around.
+                case "5", "take item", "t" -> {
+                    System.out.println("enter the name of the item you want to take");
+                    String itemToTake = scanner.next();
+                }
+                case "6", "drop", "d" -> {
+                    System.out.println("enter the name of the item you want to drop");
+                    String itemToDrop = scanner.next();
+                }
                 case "go north", "n" ->{;
                     controller.moveNorth("go north");
                 }

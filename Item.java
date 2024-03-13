@@ -31,7 +31,7 @@ public class Item {
     }
 
 
-    Food food1 = new Food(" Mango", " juicy & revitalising", "10");
-    Food food2= new Food(" Burger", " Delicious beef burger", "50");
-    Food food3 = new Food(" PotatoChips", " toxic crispy chips", "-10");
+//    Food food1 = new Food(" Mango", " juicy & revitalising", "10");
+//    Food food2= new Food(" Burger", " Delicious beef burger", "50");
+//    Food food3 = new Food(" PotatoChips", " toxic crispy chips", "-10");
 }

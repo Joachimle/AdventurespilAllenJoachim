@@ -34,17 +34,25 @@ playGame(controller.getGamePlayer());
                     String itemToDrop = scanner.next();
                     gamePlayer.dropItemInCurrentRoom(itemToDrop);
                 }
-                case "go north", "n" ->{;
-                    controller.moveNorth("go north");
-                }
-                case "go west", "w" ->{
-                    controller.moveWest("go west");
-                }
-                case "go south", "s" -> {
-                    controller.moveSouth("go south");
-                }
-                case "go east", "e" -> {
-                    controller.moveEast("go east");
+//                case "go north", "n" ->{
+//                    controller.moveNorth("go north");
+//                }
+//                case "go west", "w" ->{
+//                    controller.moveWest("go west");
+//                }
+//                case "go south", "s" -> {
+//                    controller.moveSouth("go south");
+//                }
+//                case "go east", "e" -> {
+//                    controller.moveEast("go east");
+//                }
+                case "move" -> {
+                    System.out.println("Enter your desired direction");
+                    if (gamePlayer.testMove(scanner.next())){
+                        System.out.println("You go into another room");
+                    } else {
+                        System.out.println("You can't go this way");
+                    }
                 }
                 case "exit" -> {
                     System.exit(0);
@@ -62,6 +70,7 @@ playGame(controller.getGamePlayer());
                     } else
                     controller.getGamePlayer().getInventory();
                 }
+
                 default -> System.out.println("Your input is invalid");
             }
         }
@@ -79,10 +88,10 @@ playGame(controller.getGamePlayer());
     }
     public String chooseDirection() {
         System.out.println("go north, west, east or south");
-        scanner.nextLine();
-        String userDirection = scanner.nextLine();
-        userDirection = userDirection.toLowerCase();
+        scanner.next();
+        String userDirection = scanner.next().toLowerCase();
         return userDirection;
     }
+
 
 }

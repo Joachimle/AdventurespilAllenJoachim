@@ -10,9 +10,9 @@ super(shortName, longName); // kalder item kontruktor ind
     }
     //Food objekter
 
-    Food mango = new Food(" Mango", " juicy & revitalising", "10");
-    Food burger= new Food(" Burger", " Delicious beef burger", "50");
-    Food potatoChips = new Food(" PotatoChips", " toxic crispy chips", "-10");
+//    Food mango = new Food(" Mango", " juicy & revitalising", "10");
+//    Food burger= new Food(" Burger", " Delicious beef burger", "50");
+//    Food potatoChips = new Food(" PotatoChips", " toxic crispy chips", "-10");
 
 
     //getter metod

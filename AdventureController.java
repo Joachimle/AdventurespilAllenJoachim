@@ -47,6 +47,10 @@ public class AdventureController {
     public String look() {
        return gamePlayer.look();
     }
+
+    public void testMove(String scannerDirection) {
+        gamePlayer.testMove(scannerDirection.toLowerCase());
+    }
     //Methods
 
 

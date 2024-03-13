@@ -160,5 +160,23 @@ public class Player {
                 System.out.println(" Invalid direction. Try another one");
         }
     }
+    //Overført fra "Adventure del 2 review" PDF slide 15
+    public boolean testMove(String direction){
+        Room desiredRoom = switch (direction){
+            case "north", "n" -> currentRoom.getNorth();
+            case "south", "s" -> currentRoom.getSouth();
+            case "east", "e" -> currentRoom.getEast();
+            case "west", "w" -> currentRoom.getWest();
+            default -> null;
+        };
+
+        if(desiredRoom != null){
+          currentRoom = desiredRoom;
+          return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
 

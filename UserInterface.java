@@ -16,7 +16,7 @@ public class UserInterface {
     public void startGame() {
 playGame();
     }
-    public void playGame(){
+    public void playGame(Player gamePlayer){
         String command;
         System.out.println("Welcome");
         userOptionsForDirections();
@@ -26,11 +26,14 @@ playGame();
 
                 //her er playerobjektet tilføjet fra player-klassen
                 //case 1 - look around.
-                case "5", "take item", "t" -> {
+                case "take", "take item", "t" -> {
                     System.out.println("enter the name of the item you want to take");
                     String itemToTake = scanner.next();
                 }
-                case "6", "drop", "d" -> {
+                case "1" -> {
+                    if (gamePlayer.move());
+                }
+                case "drop", "drop item", "d" -> {
                     System.out.println("enter the name of the item you want to drop");
                     String itemToDrop = scanner.next();
                 }
@@ -75,6 +78,13 @@ playGame();
         System.out.println("Write 'Look' to go look around");
         System.out.println("Write 'Help' to ask for help");
         System.out.println("Write Inventory' to look up your inventory");
+    }
+    public String chooseDirection() {
+        System.out.println("go north, west, east or south");
+        scanner.nextLine();
+        String userDirection = scanner.nextLine();
+        userDirection = userDirection.toLowerCase();
+        return userDirection;
     }
 
 }

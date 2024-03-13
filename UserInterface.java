@@ -25,7 +25,7 @@ public class UserInterface {
 
                 //her er playerobjektet tilføjet fra player-klassen
                 //case 1 - look around.
-                case "go north", "n" ->{;
+                case "go north", "n" ->{
                     controller.moveNorth("go north");
                 }
                 case "go west", "w" ->{

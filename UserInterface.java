@@ -72,6 +72,7 @@ playGame(controller.getGamePlayer());
         System.out.println("Write 'go west' to go west");
         System.out.println("Write 'go south' to go south");
         System.out.println("Write 'go east' to go east");
+        System.out.println("Write5 to take an item");
         System.out.println("Write 'Look' to go look around");
         System.out.println("Write 'Help' to ask for help");
         System.out.println("Write Inventory' to look up your inventory");

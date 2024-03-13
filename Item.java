@@ -5,7 +5,7 @@ public class Item {
 
 
 
-    public Item(String longName, String shortName) {
+    public Item(String shortName, String longName) {
         this.longName = longName;
         this.shortName = shortName;
     }
@@ -29,6 +29,5 @@ public class Item {
     public String toString() {
         return getLongName();
     }
-
 
 }

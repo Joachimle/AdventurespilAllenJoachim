@@ -27,7 +27,7 @@ public class Map {
         //Room 1
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.addItemToCurrentRoom("kniv");
+        room1.addItemToCurrentRoom();
 
 
         room2.setWest(room1);

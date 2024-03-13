@@ -7,13 +7,36 @@ public class Player {
     private Room currentRoom;
     private Player player;
     private ArrayList<Item> inventory = new ArrayList<>();
+    private int health = 100;
 
 
     //CONSTRUCTOR
     public Player(Room currentRoom) {
         this.currentRoom = currentRoom;
         this.inventory = new ArrayList<>();
+        this.health = health;
     }
+
+    public Player(int health) {
+        if(health < 0 || health > 100) {
+            throw new IllegalArgumentException();
+        } else {
+            this.health = health;
+        }
+    }
+
+    public int getPlayerHealth() {
+        return health;
+    }
+
+    public void setPlayerHealth(int newHealth) {
+        if(newHealth < 0 || newHealth > 100) {
+            throw new IllegalArgumentException();
+        } else {
+            health = newHealth;
+        }
+    }
+
     public void takeItemAndAddToInventory(String itemName) {
         Item item = currentRoom.searhForItemsInCurrentRoom(itemName);
         if (item != null) {

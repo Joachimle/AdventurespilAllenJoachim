@@ -17,7 +17,8 @@ public class Player {
         this.health = health;
     }
 
-    public Player(int health) {
+
+    public void playerHealth(int health) {
         if(health < 0 || health > 100) {
             throw new IllegalArgumentException();
         } else {
@@ -26,11 +27,11 @@ public class Player {
     }
 
     public int getPlayerHealth() {
-        return health;
+        return  health;
     }
 
     public void setPlayerHealth(int newHealth) {
-        if(newHealth < 0 || newHealth > 100) {
+        if(newHealth < 0 || newHealth > 100) { // health range er sat fra 0-100
             throw new IllegalArgumentException();
         } else {
             health = newHealth;

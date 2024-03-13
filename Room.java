@@ -14,7 +14,8 @@ public class Room {
     }
     // Metoder
 
-    public void addItemToCurrentRoom() {
+    public void addItemToCurrentRoom(Item item) {
+        itemList.add(item);
     }
 
     public Item lookForItemsInCurrentRoom(String shortName) {
@@ -30,6 +31,21 @@ public class Room {
         Item item = lookForItemsInCurrentRoom(shortName);
         itemList.remove(item);
         }
+    public Item searhForItemsInCurrentRoom(String shortName) {
+        for (Item i : itemList) {
+            if (i.getShortName().equals(shortName)) {
+                return i;
+            }
+        }
+        return null;
+    }
+    public void removeItem(Item item) {
+        itemList.remove(item);
+    }
+    public ArrayList<Item> itemsInCurrentRoom() {
+        return itemList;
+    }
+
 
 
     // Getter & setter Methods

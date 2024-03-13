@@ -7,48 +7,24 @@ public class Player {
     private Room currentRoom;
     private Player player;
     private ArrayList<Item> inventory = new ArrayList<>();
-    private int health = 100;
 
 
     //CONSTRUCTOR
     public Player(Room currentRoom) {
         this.currentRoom = currentRoom;
         this.inventory = new ArrayList<>();
-        this.health = health;
     }
-
-    //CONSTRUCTOR
-    public Player(int health) {
-        if (health > 0 || health < 100) {
-            throw new IllegalArgumentException();
+    public void takeItemAndAddToInventory(String itemName) {
+        Item item = currentRoom.searhForItemsInCurrentRoom(itemName);
+        if (item != null) {
+            currentRoom.removeItem(item);
+            addItem(item);
+            System.out.println("you took the: " + item.getShortName() + ".");
         } else {
-            this.health = health;
+            System.out.println("no item with the name : " + itemName + " exists.");
         }
     }
 
-    public int getPlayerHealth() {
-        return health;
-    }
-
-    public void setPlayerHealth(int newHealth) {
-        if (newHealth < 0 || newHealth > 100) {
-            throw new IllegalArgumentException();
-        } else {
-            health = newHealth;
-        }
-    }
-
-    /* FORSØG PÅ AT LAVE EN METODE DER ERKLÆRER EN SPILLER DØD NÅR HEALTH ER PÅ 0
-    String playerDeath = "You are out of life";
-
-    public PlayerDeath() {
-        if (health <= 0) {
-            return playerDeath;
-        }
-    }*/
-
-    //METODER
-//Finds item in inventory
     public Item findItemFromInventory(String shortName) {
         for (Item i : inventory) {
             if (i.getShortName().equals(shortName)) {
@@ -59,23 +35,53 @@ public class Player {
     }
 
     //removes item from inventory
-    public void removeItemFromInventory(String shortName) {
+    public void dropItemInCurrentRoom(String shortName) {
+        System.out.println("Writhe the name of the item you want to drop");
         Item item = findItemFromInventory(shortName);
+        if (item != null) {
+            removeItem(item);
+            currentRoom.addItemToCurrentRoom(item);
+            System.out.println("the item " + item + " has been removed");
+        } else {
+            System.out.println("no item in inventory with the name :" + item + ".");
+        }
+
+    }
+
+    public void addToInventory(Item item) {
+        inventory.add(item);
+    }
+
+
+    public void addItem(Item item) {
+        inventory.add(item);
+    }
+
+    public void removeItem(Item item) {
         inventory.remove(item);
     }
 
-    public void addToInventory(String item) {
-    }
-
-    public ArrayList<Item> showInventory() {
+    public ArrayList<Item> getInventory() {
         return inventory;
     }
 
+
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+
+    public void setCurrentRoom(Room currentRoom) {
+        this.currentRoom = currentRoom;
+    }
+
     public String look() {
-        String look = (currentRoom.getRoomName() + "\n"
-                + currentRoom.getRoomDiscription() + "\n"
-                + currentRoom.lookForItemsInCurrentRoom("knife"));
-        return look;
+        StringBuilder roomInfo = new StringBuilder();
+        roomInfo.append("You are in: ").append(currentRoom.getRoomName());
+        roomInfo.append("\n").append(currentRoom.getRoomDiscription());
+        roomInfo.append("\n");
+        roomInfo.append("You find the following items in the room: ");
+        roomInfo.append("\n").append(currentRoom.itemsInCurrentRoom());
+        return roomInfo.toString();
     }
 
     public void move(String direction) {

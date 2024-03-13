@@ -41,7 +41,7 @@ public class AdventureController {
     }
 
     public void showPlayerInventory () {
-        gamePlayer.showInventory();
+        gamePlayer.getInventory();
     }
 
     public String look() {

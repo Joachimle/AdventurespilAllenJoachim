@@ -14,7 +14,7 @@ public class UserInterface {
 
     //Methods
     public void startGame() {
-playGame();
+playGame(controller.getGamePlayer());
     }
     public void playGame(Player gamePlayer){
         String command;
@@ -24,18 +24,15 @@ playGame();
             command = scanner.next().toLowerCase();
             switch (command) {
 
-                //her er playerobjektet tilføjet fra player-klassen
-                //case 1 - look around.
-                case "take", "take item", "t" -> {
+                case "5", "take item", "t" -> {
                     System.out.println("enter the name of the item you want to take");
                     String itemToTake = scanner.next();
+                    gamePlayer.takeItemAndAddToInventory(itemToTake);
                 }
-                case "1" -> {
-                    if (gamePlayer.move());
-                }
-                case "drop", "drop item", "d" -> {
+                case "6", "drop", "d" -> {
                     System.out.println("enter the name of the item you want to drop");
                     String itemToDrop = scanner.next();
+                    gamePlayer.dropItemInCurrentRoom(itemToDrop);
                 }
                 case "go north", "n" ->{;
                     controller.moveNorth("go north");
@@ -60,10 +57,10 @@ playGame();
                     System.out.println("Please write a direction if you wanna leave the room");
                 }
                 case "inventory", "inv", "i" -> {
-                    if (controller.getGamePlayer().showInventory().isEmpty()) {
+                    if (controller.getGamePlayer().getInventory().isEmpty()) {
                         System.out.println("Your inventory is empty");
                     } else
-                    controller.getGamePlayer().showInventory();
+                    controller.getGamePlayer().getInventory();
                 }
                 default -> System.out.println("Your input is invalid");
             }

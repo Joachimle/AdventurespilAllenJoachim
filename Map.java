@@ -2,6 +2,7 @@ public class Map {
     //Attributes
     private Room firstRoom;
     private Item item;
+    private Food food;
 
     //Constructor
     public Map() {
@@ -32,6 +33,7 @@ public class Map {
 
         room2.setWest(room1);
         room2.setEast(room3);
+        room2.addItemToCurrentRoom(new Food(" Bolle med ost", "en bolle med ost og smør","30"));
 
         room3.setWest(room2);
         room3.setSouth(room6);

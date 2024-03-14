@@ -4,9 +4,9 @@ public class Food extends Item { // den klasse er en subklasse af Item.mItem con
     private int healthPoints;
 
     //contructor
-    public Food(String shortName,String longName, String healthpoints){
-super(shortName, longName); // kalder item kontruktor ind
-        this.healthPoints = Integer.parseInt(healthpoints); // burger parseint fordi healthPoins kan blive sat til et negativ tal.
+    public Food(String shortName, String longName, int healthPoints) {
+        super(shortName, longName); // kalder item konstruktor ind
+        this.healthPoints = healthPoints; // bruger parseint fordi healthPoinst kan blive sat til et negativ tal.
     }
     //Food objekter
 
@@ -14,9 +14,8 @@ super(shortName, longName); // kalder item kontruktor ind
 //    Food burger= new Food(" Burger", " Delicious beef burger", "50");
 //    Food potatoChips = new Food(" PotatoChips", " toxic crispy chips", "-10");
 
-
     //getter metod
-    public int getHealthPoints(){
+    public int getHealthPoints() {
         return healthPoints;
     }
 }

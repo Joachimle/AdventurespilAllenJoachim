@@ -28,26 +28,36 @@ public class Map {
         //Room 1
         room1.setEast(room2);
         room1.setSouth(room4);
+        room1.addItemToCurrentRoom(new Food("Glas vin", "En 100 år gammel rosindrik", -15);
         room1.addItemToCurrentRoom(new Item("knife", "a long knife"));
 
 
         room2.setWest(room1);
         room2.setEast(room3);
-        room2.addItemToCurrentRoom(new Food(" Bolle med ost", "en bolle med ost og smør","30"));
+        room2.addItemToCurrentRoom(new Food("Muslibar", "Muslibar med tranebær, citron og hasselnødder", 5));
+        room2.addItemToCurrentRoom(new Food(" Bolle med ost", "en bolle med ost og smør",30));
 
         room3.setWest(room2);
         room3.setSouth(room6);
+        room3.addItemToCurrentRoom(new Food("Leverpostej mad", "Rugbrød med leverposej, rødbedder og peber", 10));
+        room3.addItemToCurrentRoom((new Food("Agurk", "Den saftigste agurk i byen", 5)));
 
         room4.setNorth(room1);
         room4.setSouth(room7);
+        room4.addItemToCurrentRoom((new Food("Kakaodrik", "Supreme Chokomel drik", 15)));
+        room4.addItemToCurrentRoom((new Food("Grapefrugt", "En råden grapefrugt", -10)));
 
         room5.setSouth(room8);
 
         room6.setNorth(room3);
         room6.setSouth(room9);
+        room6.addItemToCurrentRoom((new Food("Fastalavnsbolle", "Den dyre fra Lagkagehuset", 20)));
+        room6.addItemToCurrentRoom((new Food("Kylling", "Rå kylling der har ligget lidt for længe", -15)));
 
         room7.setNorth(room4);
         room7.setEast(room8);
+        room7.addItemToCurrentRoom(new Food("Insekter", "Et glas insekter spicet op med BBQ", 10));
+        room7.addItemToCurrentRoom(new Food("Kaffe", "En kop varm kaffe af mærket Merrild", 0)));
 
         room8.setWest(room7);
         room8.setNorth(room5);

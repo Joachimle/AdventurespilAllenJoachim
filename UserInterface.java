@@ -74,12 +74,4 @@ playGame(controller.getGamePlayer());
         System.out.println("Write 'Help' to ask for help");
         System.out.println("Write Inventory' to look up your inventory");
     }
-    public String chooseDirection() {
-        System.out.println("go north, west, east or south");
-        scanner.next();
-        String userDirection = scanner.next().toLowerCase();
-        return userDirection;
-    }
-
-
 }

@@ -34,21 +34,9 @@ playGame(controller.getGamePlayer());
                     String itemToDrop = scanner.next();
                     gamePlayer.dropItemInCurrentRoom(itemToDrop);
                 }
-//                case "go north", "n" ->{
-//                    controller.moveNorth("go north");
-//                }
-//                case "go west", "w" ->{
-//                    controller.moveWest("go west");
-//                }
-//                case "go south", "s" -> {
-//                    controller.moveSouth("go south");
-//                }
-//                case "go east", "e" -> {
-//                    controller.moveEast("go east");
-//                }
                 case "move" -> {
                     System.out.println("Enter your desired direction");
-                    if (gamePlayer.testMove(scanner.next())){
+                    if (gamePlayer.move(scanner.next())){
                         System.out.println("You go into another room");
                     } else {
                         System.out.println("You can't go this way");
@@ -68,7 +56,7 @@ playGame(controller.getGamePlayer());
                     if (controller.getGamePlayer().getInventory().isEmpty()) {
                         System.out.println("Your inventory is empty");
                     } else
-                    controller.getGamePlayer().getInventory();
+                        controller.getGamePlayer().getInventory();
                 }
 
                 default -> System.out.println("Your input is invalid");

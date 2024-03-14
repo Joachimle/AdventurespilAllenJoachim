@@ -108,60 +108,8 @@ public class Player {
         return roomInfo.toString();
     }
 
-    public void move(String direction) {
-
-        switch (direction) {
-
-            case "go north":
-                if (currentRoom.getNorth() != null) {
-                    currentRoom = currentRoom.getNorth();
-                    System.out.println("Going North");
-                    System.out.println("Please write a new direction if you wanna leave the room");
-                } else {
-                    System.out.println("You can't go this way");
-                }
-                break;
-
-
-            case "go west":
-                if (currentRoom.getWest() != null) {
-                    currentRoom = currentRoom.getWest();
-                    System.out.println("Going west");
-                    System.out.println("Please write a new direction if you wanna leave the room");
-                } else {
-                    System.out.println("You can't go this way");
-                }
-                break;
-
-
-            case "go south":
-                if (currentRoom.getSouth() != null) {
-                    currentRoom = currentRoom.getSouth();
-                    System.out.println("Going south");
-                    System.out.println("Please write a new direction if you wanna leave the room");
-                } else {
-                    System.out.println("You can't go this way");
-                }
-                break;
-
-
-            case "go east":
-                if (currentRoom.getEast() != null) {
-                    currentRoom = currentRoom.getEast();
-                    System.out.println("Going East");
-                    System.out.println("Please write a new direction if you wanna leave the room");
-                } else {
-                    System.out.println("You can't go this way");
-                }
-                break;
-
-
-            default:
-                System.out.println(" Invalid direction. Try another one");
-        }
-    }
     //Overført fra "Adventure del 2 review" PDF slide 15
-    public boolean testMove(String direction){
+    public boolean move(String direction){
         Room desiredRoom = switch (direction){
             case "north", "n" -> currentRoom.getNorth();
             case "south", "s" -> currentRoom.getSouth();

@@ -27,19 +27,6 @@ public class AdventureController {
         this.gamePlayer = gamePlayer;
     }
 
-    public void moveNorth(String goNorth) {
-        gamePlayer.move("go north");
-    }
-    public void moveWest(String goWest) {
-        gamePlayer.move("go west");
-    }
-    public void moveEast(String goEast) {
-        gamePlayer.move("go east");
-    }
-    public void moveSouth(String goSouth) {
-        gamePlayer.move("go south");
-    }
-
     public void showPlayerInventory () {
         gamePlayer.getInventory();
     }
@@ -48,8 +35,8 @@ public class AdventureController {
        return gamePlayer.look();
     }
 
-    public void testMove(String scannerDirection) {
-        gamePlayer.testMove(scannerDirection.toLowerCase());
+    public void ctrlMove(String scannerDirection) {
+        gamePlayer.move(scannerDirection.toLowerCase());
     }
     //Methods
 

@@ -18,12 +18,12 @@ public class Player {
     }
 
 
-    public void playerHealth(int health) {
-        if(health < 0 || health > 100) {
-            throw new IllegalArgumentException();
-        } else {
-            this.health = health;
+    public Integer playerDied() {
+        if (health < 0) {
+            System.out.println("you died");
+            System.exit(0);
         }
+        return null;
     }
 
     public int getPlayerHealth() {
@@ -31,8 +31,10 @@ public class Player {
     }
 
     public void setPlayerHealth(int newHealth) {
-        if(newHealth < 0 || newHealth > 100) { // health range er sat fra 0-100
-            throw new IllegalArgumentException();
+        if(newHealth <= 0) { // health range er sat fra 0-100
+            playerDied();
+        } else if (newHealth > 100){
+
         } else {
             health = newHealth;
         }

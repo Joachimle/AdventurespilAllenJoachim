@@ -12,11 +12,11 @@ public class UserInterface {
         controller = new AdventureController();
     }
 
-    //Methods
-    public void startGame() {
-playGame(controller.getGamePlayer());
-    }
-    public void playGame(Player gamePlayer){
+   // Methods
+//    public void startGame() {
+//playGame();
+//    }
+    public void playGame(){
         String command;
         System.out.println("Welcome");
         userOptionsForDirections();
@@ -27,16 +27,16 @@ playGame(controller.getGamePlayer());
                 case "5", "take item", "t" -> {
                     System.out.println("enter the name of the item you want to take");
                     String itemToTake = scanner.next();
-                    gamePlayer.takeItemAndAddToInventory(itemToTake);
+                    controller.getGamePlayer().takeItemAndAddToInventory(itemToTake);
                 }
                 case "6", "drop", "d" -> {
                     System.out.println("enter the name of the item you want to drop");
                     String itemToDrop = scanner.next();
-                    gamePlayer.dropItemInCurrentRoom(itemToDrop);
+                    controller.getGamePlayer().dropItemInCurrentRoom(itemToDrop);
                 }
                 case "move" -> {
                     System.out.println("Enter your desired direction");
-                    if (gamePlayer.move(command)){
+                    if (controller.getGamePlayer().move(scanner.next())){
                         System.out.println("You go into another room");
                     } else {
                         System.out.println("You can't go this way");
@@ -53,7 +53,7 @@ playGame(controller.getGamePlayer());
                     System.out.println("Please write a direction if you wanna leave the room");
                 }
                 case "health", "hp" -> {
-                    System.out.println(gamePlayer.getPlayerHealth());
+                    System.out.println(controller.getGamePlayer().getPlayerHealth());
                 }
                 case "inventory", "inv", "i" -> {
                     if (controller.getGamePlayer().getInventory().isEmpty()) {

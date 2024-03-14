@@ -28,7 +28,7 @@ public class Map {
         //Room 1
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.addItemToCurrentRoom(new Food("Glas vin", "En 100 år gammel rosindrik", -15);
+        room1.addItemToCurrentRoom(new Food("Glas vin", "En 100 år gammel rosindrik", -15));
         room1.addItemToCurrentRoom(new Item("knife", "a long knife"));
 
 
@@ -57,7 +57,7 @@ public class Map {
         room7.setNorth(room4);
         room7.setEast(room8);
         room7.addItemToCurrentRoom(new Food("Insekter", "Et glas insekter spicet op med BBQ", 10));
-        room7.addItemToCurrentRoom(new Food("Kaffe", "En kop varm kaffe af mærket Merrild", 0)));
+        room7.addItemToCurrentRoom(new Food("Kaffe", "En kop varm kaffe af mærket Merrild", 0));
 
         room8.setWest(room7);
         room8.setNorth(room5);

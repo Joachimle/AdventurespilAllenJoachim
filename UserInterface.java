@@ -36,7 +36,7 @@ playGame(controller.getGamePlayer());
                 }
                 case "move" -> {
                     System.out.println("Enter your desired direction");
-                    if (gamePlayer.move(scanner.next())){
+                    if (gamePlayer.move(command)){
                         System.out.println("You go into another room");
                     } else {
                         System.out.println("You can't go this way");
@@ -51,6 +51,9 @@ playGame(controller.getGamePlayer());
                 case "look", "l" -> {
                     System.out.println(controller.look());
                     System.out.println("Please write a direction if you wanna leave the room");
+                }
+                case "health", "hp" -> {
+                    System.out.println(gamePlayer.getPlayerHealth());
                 }
                 case "inventory", "inv", "i" -> {
                     if (controller.getGamePlayer().getInventory().isEmpty()) {

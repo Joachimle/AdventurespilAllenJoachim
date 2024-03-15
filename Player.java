@@ -39,15 +39,15 @@ public class Player {
             playerHealth = newHealth;
         }
     }
-    public String eatFoodorItem(String shortName) {
-        Item item = findItemFromInventory(shortName);
+    public void eatFoodorItem(String shortName) {
+        Item item = findItemFromInventoryOrCurrentRoom(shortName);
         if (item == null) {
-            return "you found nothing to eat";
+            System.out.println("you found nothing to eat");
         } else if (item instanceof Food food) {
             removeItem(item);
             playerHealth += food.getHealthPoints();
-            return "you gained " + food.getHealthPoints();
-        } else return item + " Not eatable";
+            System.out.println("you gained " + food.getHealthPoints());
+        } else System.out.println(item + " Not eatable");
     }
 
     public void takeItemAndAddToInventory(String itemName) {
@@ -61,8 +61,13 @@ public class Player {
         }
     }
 
-    public Item findItemFromInventory(String shortName) {
+    public Item findItemFromInventoryOrCurrentRoom(String shortName) {
         for (Item i : inventory) {
+            if (i.getShortName().equals(shortName)) {
+                return i;
+            }
+        }
+        for (Item i : currentRoom.itemsInCurrentRoom()) {
             if (i.getShortName().equals(shortName)) {
                 return i;
             }
@@ -73,7 +78,7 @@ public class Player {
     //removes item from inventory
     public void dropItemInCurrentRoom(String shortName) {
         System.out.println("Writhe the name of the item you want to drop");
-        Item item = findItemFromInventory(shortName);
+        Item item = findItemFromInventoryOrCurrentRoom(shortName);
         if (item != null) {
             removeItem(item);
             currentRoom.addItemToCurrentRoom(item);

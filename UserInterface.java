@@ -27,36 +27,42 @@ public class UserInterface {
 
             switch (command) {
 
-                case "5", "take item", "t" -> {
-                    System.out.println("enter the name of the item you want to take");
-                    String itemToTake = scanner.next();
-                    controller.getGamePlayer().takeItemAndAddToInventory(itemToTake);
-                }
-                case "take" ->{
+                case "take", "t" ->{
                     String itemToTake = commandParameter;
                     controller.getGamePlayer().takeItemAndAddToInventory(itemToTake);
                 }
-                case "6", "drop", "d" -> {
-                    System.out.println("enter the name of the item you want to drop");
-                    String itemToDrop = scanner.next();
+                case "drop", "d" -> {
+                    String itemToDrop = commandParameter;
                     controller.getGamePlayer().dropItemInCurrentRoom(itemToDrop);
                 }
-                case "move" -> {
-                    System.out.println("Enter your desired direction");
-                    if (controller.getGamePlayer().move(scanner.next())){
-                        System.out.println("You go into another room");
-                    } else {
-                        System.out.println("You can't go this way");
-                    }
-                }
-                case "go north" -> {
+                case "go north", "north", "n" -> {
                     if (controller.getGamePlayer().move("north")){
                         System.out.println("Going north");
                     } else {
                         System.out.println("You can't go this way");
                     }
                 }
-
+                case "go south", "south", "s" -> {
+                    if (controller.getGamePlayer().move("south")){
+                        System.out.println("Going south");
+                    } else {
+                        System.out.println("You can't go this way");
+                    }
+                }
+                case "go east", "east", "e" -> {
+                    if (controller.getGamePlayer().move("east")){
+                        System.out.println("Going east");
+                    } else {
+                        System.out.println("You can't go this way");
+                    }
+                }
+                case "go west", "west", "w" -> {
+                    if (controller.getGamePlayer().move("west")){
+                        System.out.println("Going west");
+                    } else {
+                        System.out.println("You can't go this way");
+                    }
+                }
                 case "exit" -> {
                     System.exit(0);
                 }
@@ -87,22 +93,22 @@ public class UserInterface {
         System.out.println("Write 'go west' to go west");
         System.out.println("Write 'go south' to go south");
         System.out.println("Write 'go east' to go east");
-        System.out.println("Write5 to take an item");
+        System.out.println("Write 'take' followed by the name of an item to take it");
         System.out.println("Write 'Look' to go look around");
         System.out.println("Write 'Help' to ask for help");
-        System.out.println("Write Inventory' to look up your inventory");
+        System.out.println("Write 'Inventory' to look up your inventory");
     }
 
     public String processUserInput(String command){
         String[] userInputArray = command.split(" ");
-        command = userInputArray[0];
-        if (command.equals("eat")){
+        this.command = userInputArray[0];
+        if (this.command.equals("eat")){
             commandParameter = userInputArray[1];
             return userInputArray[0];
-        } else if (command.equals("drop")) {
+        } else if (this.command.equals("drop")) {
             commandParameter = userInputArray[1];
             return userInputArray[0];
-        } else if (command.equals("take")) {
+        } else if (this.command.equals("take")) {
             commandParameter = userInputArray[1];
             return userInputArray[0];
         }

@@ -7,19 +7,19 @@ public class Player {
     private Room currentRoom;
     private Player player;
     private ArrayList<Item> inventory = new ArrayList<>();
-    private int health = 100;
+    private int playerHealth = 100;
 
 
     //CONSTRUCTOR
     public Player(Room currentRoom) {
         this.currentRoom = currentRoom;
         this.inventory = new ArrayList<>();
-        this.health = health;
+        this.playerHealth = playerHealth;
     }
 
 
     public Integer playerDied() {
-        if (health < 0) {
+        if (playerHealth < 0) {
             System.out.println("you died");
             System.exit(0);
         }
@@ -27,7 +27,7 @@ public class Player {
     }
 
     public int getPlayerHealth() {
-        return  health;
+        return playerHealth;
     }
 
     public void setPlayerHealth(int newHealth) {
@@ -36,8 +36,18 @@ public class Player {
         } else if (newHealth > 100){
 
         } else {
-            health = newHealth;
+            playerHealth = newHealth;
         }
+    }
+    public String eatFoodorItem(String shortName) {
+        Item item = findItemFromInventory(shortName);
+        if (item == null) {
+            return "you found nothing to eat";
+        } else if (item instanceof Food food) {
+            removeItem(item);
+            playerHealth += food.getHealthPoints();
+            return "you gained " + food.getHealthPoints();
+        } else return item + " Not eatable";
     }
 
     public void takeItemAndAddToInventory(String itemName) {

@@ -1,9 +1,8 @@
-public abstract class Item {
+public class Weapon {
     private String shortName;
     private String longName;
 
-
-    public Item(String shortName, String longName) {
+    public Weapon(String shortName, String longName) {
         this.longName = longName;
         this.shortName = shortName;
     }
@@ -16,16 +15,11 @@ public abstract class Item {
         return longName;
     }
 
-    public void setShortName(String shortName) {
+    public void setShortName() {
         this.shortName = shortName;
     }
 
     public void setLongName(String longName) {
         this.longName = longName;
-    }
-
-    @Override
-    public String toString() {
-        return getLongName();
     }
 }

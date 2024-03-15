@@ -7,35 +7,47 @@ public class Player {
     private Room currentRoom;
     private Player player;
     private ArrayList<Item> inventory = new ArrayList<>();
-    private int health = 100;
+    private int playerHealth = 100;
 
 
     //CONSTRUCTOR
     public Player(Room currentRoom) {
         this.currentRoom = currentRoom;
         this.inventory = new ArrayList<>();
-        this.health = health;
+        this.playerHealth = playerHealth;
     }
 
 
-    public void playerHealth(int health) {
-        if(health < 0 || health > 100) {
-            throw new IllegalArgumentException();
-        } else {
-            this.health = health;
+    public Integer playerDied() {
+        if (playerHealth < 0) {
+            System.out.println("you died");
+            System.exit(0);
         }
+        return null;
     }
 
     public int getPlayerHealth() {
-        return  health;
+        return playerHealth;
     }
 
     public void setPlayerHealth(int newHealth) {
-        if(newHealth < 0 || newHealth > 100) { // health range er sat fra 0-100
-            throw new IllegalArgumentException();
+        if(newHealth <= 0) { // health range er sat fra 0-100
+            playerDied();
+        } else if (newHealth > 100){
+
         } else {
-            health = newHealth;
+            playerHealth = newHealth;
         }
+    }
+    public void eatFoodorItem(String shortName) {
+        Item item = findItemFromInventoryOrCurrentRoom(shortName);
+        if (item == null) {
+            System.out.println("you found nothing to eat");
+        } else if (item instanceof Food food) {
+            removeItem(item);
+            playerHealth += food.getHealthPoints();
+            System.out.println("you gained " + food.getHealthPoints());
+        } else System.out.println(item + " Not eatable");
     }
 
     public void takeItemAndAddToInventory(String itemName) {
@@ -49,8 +61,13 @@ public class Player {
         }
     }
 
-    public Item findItemFromInventory(String shortName) {
+    public Item findItemFromInventoryOrCurrentRoom(String shortName) {
         for (Item i : inventory) {
+            if (i.getShortName().equals(shortName)) {
+                return i;
+            }
+        }
+        for (Item i : currentRoom.itemsInCurrentRoom()) {
             if (i.getShortName().equals(shortName)) {
                 return i;
             }
@@ -61,7 +78,7 @@ public class Player {
     //removes item from inventory
     public void dropItemInCurrentRoom(String shortName) {
         System.out.println("Writhe the name of the item you want to drop");
-        Item item = findItemFromInventory(shortName);
+        Item item = findItemFromInventoryOrCurrentRoom(shortName);
         if (item != null) {
             removeItem(item);
             currentRoom.addItemToCurrentRoom(item);

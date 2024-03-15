@@ -6,7 +6,7 @@ public class AdventureController {
     //Constructor
     public AdventureController() {
         gameMap = new Map();
-        gamePlayer = new Player(gameMap.getFirstRoom());
+            gamePlayer = new Player(gameMap.getFirstRoom());
     }
 
     //Getters bliver lavet her

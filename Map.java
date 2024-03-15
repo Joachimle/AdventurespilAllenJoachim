@@ -28,13 +28,14 @@ public class Map {
         room1.setEast(room2);
         room1.setSouth(room4);
         room1.addItemToCurrentRoom(new Food("Glas vin", "En 100 år gammel rosindrik", -15));
-        room1.addItemToCurrentRoom(new Item("knife", "a long knife"));
+        room1.addItemToCurrentRoom(new MeleeWeapon("Kniv", "Den vildeste kniv i byen", 10));
 
         //ROOM 2
         room2.setWest(room1);
         room2.setEast(room3);
         room2.addItemToCurrentRoom(new Food("Muslibar", "Muslibar med tranebær, citron og hasselnødder", 5));
         room2.addItemToCurrentRoom(new Food(" Bolle med ost", "en bolle med ost og smør", 20));
+        room2.addItemToCurrentRoom(new RangedWeapon("Dessert Eagle", "Den tungeste dreng i byen", 25, 10));
 
         //ROOM 3
         room3.setWest(room2);
@@ -47,6 +48,7 @@ public class Map {
         room4.setSouth(room7);
         room4.addItemToCurrentRoom((new Food("Kakaodrik", "Supreme Chokomel drik", 15)));
         room4.addItemToCurrentRoom((new Food("Grapefrugt", "En råden grapefrugt", -10)));
+        room4.addItemToCurrentRoom(new MeleeWeapon("Dolphs kølle", "DØDMEDKØLLE", 5));
 
         //ROOM 5
         room5.setSouth(room8);

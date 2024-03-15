@@ -1,5 +1,4 @@
-
-public class Item {
+public abstract class Item {
     private String shortName;
     private String longName;
 

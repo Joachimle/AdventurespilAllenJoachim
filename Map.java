@@ -27,28 +27,28 @@ public class Map {
         //ROOM 1
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.addItemToCurrentRoom(new Food("Glas vin", "En 100 år gammel rosindrik", -15));
-//        room1.addItemToCurrentRoom(new MeleeWeapon("Kniv", "Den vildeste kniv i byen", 10));
+        room1.addItemToCurrentRoom(new Food("vin", "En 100 år gammel rosindrik", -15));
+        room1.addItemToCurrentRoom(new MeleeWeapon("kniv", "Den vildeste kniv i byen", 10));
 
         //ROOM 2
         room2.setWest(room1);
         room2.setEast(room3);
-        room2.addItemToCurrentRoom(new Food("Muslibar", "Muslibar med tranebær, citron og hasselnødder", 5));
-        room2.addItemToCurrentRoom(new Food(" Bolle med ost", "en bolle med ost og smør", 20));
-//        room2.addItemToCurrentRoom(new RangedWeapon("Dessert Eagle", "Den tungeste dreng i byen", 25, 10));
+        room2.addItemToCurrentRoom(new Food("muslibar", "Muslibar med tranebær, citron og hasselnødder", 5));
+        room2.addItemToCurrentRoom(new Food("bolle", "en bolle med ost og smør", 20));
+        room2.addItemToCurrentRoom(new RangedWeapon("dessertEagle", "Den tungeste dreng i byen", 25, 10));
 
         //ROOM 3
         room3.setWest(room2);
         room3.setSouth(room6);
-        room3.addItemToCurrentRoom(new Food("Leverpostej mad", "Rugbrød med leverposej, rødbedder og peber", 10));
-        room3.addItemToCurrentRoom((new Food("Agurk", "Den saftigste agurk i byen", 5)));
+        room3.addItemToCurrentRoom(new Food("rugbrød", "Rugbrød med leverpostej, rødbedder og peber", 10));
+        room3.addItemToCurrentRoom(new Food("agurk", "Den saftigste agurk i byen", 5));
 
         //ROOM 4
         room4.setNorth(room1);
         room4.setSouth(room7);
-        room4.addItemToCurrentRoom((new Food("Kakaodrik", "Supreme Chokomel drik", 15)));
-        room4.addItemToCurrentRoom((new Food("Grapefrugt", "En råden grapefrugt", -10)));
-//        room4.addItemToCurrentRoom(new MeleeWeapon("Dolphs kølle", "DØDMEDKØLLE", 5));
+        room4.addItemToCurrentRoom(new Food("kakaodrik", "Supreme Chokomel drik", 15));
+        room4.addItemToCurrentRoom(new Food("grapefrugt", "En råden grapefrugt", -10));
+        room4.addItemToCurrentRoom(new MeleeWeapon("kølle", "Dolphs Kølle: DØDMEDKØLLE", 5));
 
         //ROOM 5
         room5.setSouth(room8);
@@ -56,27 +56,27 @@ public class Map {
         //ROOM 6
         room6.setNorth(room3);
         room6.setSouth(room9);
-        room6.addItemToCurrentRoom((new Food("Fastalavnsbolle", "Den dyre fra Lagkagehuset", 20)));
-        room6.addItemToCurrentRoom((new Food("Kylling", "Rå kylling der har ligget lidt for længe", -15)));
+        room6.addItemToCurrentRoom((new Food("fastelavnsbolle", "Den dyre fra Lagkagehuset", 20)));
+        room6.addItemToCurrentRoom((new Food("kylling", "Rå kylling der har ligget lidt for længe", -15)));
 
         //ROOM 7
         room7.setNorth(room4);
         room7.setEast(room8);
-        room7.addItemToCurrentRoom(new Food("Insekter", "Et glas insekter spicet op med BBQ", 10));
-        room7.addItemToCurrentRoom(new Food("Kaffe", "En kop varm kaffe af mærket Merrild", 0));
+        room7.addItemToCurrentRoom(new Food("insekter", "Et glas insekter spicet op med BBQ", 10));
+        room7.addItemToCurrentRoom(new Food("kaffe", "En kop varm kaffe af mærket Merrild", 0));
 
         //ROOM 8
         room8.setWest(room7);
         room8.setNorth(room5);
         room8.setEast(room9);
-        room8.addItemToCurrentRoom(new Food("Energidrik", "Den helt billige sukkerfri fra Lidl", 5));
-        room8.addItemToCurrentRoom(new Food("Flaske vand", "En halvtom,lun flaske kildevand", 5));
+        room8.addItemToCurrentRoom(new Food("energidrik", "Den helt billige sukkerfri fra Lidl", 5));
+        room8.addItemToCurrentRoom(new Food("flaske vand", "En halvtom,lun flaske kildevand", 5));
 
         //ROOM 9
         room9.setWest(room8);
         room9.setNorth(room6);
-        room9.addItemToCurrentRoom(new Food("Majs", "En bøtte dåsemajs der udløb for 5 år siden", -10));
-        room9.addItemToCurrentRoom(new Food("Glögg", "En flaske alkoholfri Glögg fra Remam 1000", 3));
+        room9.addItemToCurrentRoom(new Food("majs", "En bøtte dåsemajs der udløb for 5 år siden", -10));
+        room9.addItemToCurrentRoom(new Food("glögg", "En flaske alkoholfri Glögg fra Remam 1000", 3));
     }
 
     public Room getFirstRoom() {

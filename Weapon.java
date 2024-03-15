@@ -1,25 +1,13 @@
-public class Weapon {
-    private String shortName;
-    private String longName;
+public abstract class Weapon extends Item {
+
 
     public Weapon(String shortName, String longName) {
-        this.longName = longName;
-        this.shortName = shortName;
+        super(shortName, longName); //calls item constructor
     }
+//
+//    //Weapon methods for use in subclasses
+//    public abstract int remainingUses(); //overridden in RangedWeapon class to keep count of remaining uses of the ranged weapon
+//
+//    public abstract boolean canUse(); //overridden in RangedWeapon class to decide if the ranged weapon is usable
 
-    public String getShortName() {
-        return shortName;
-    }
-
-    public String getLongName() {
-        return longName;
-    }
-
-    public void setShortName() {
-        this.shortName = shortName;
-    }
-
-    public void setLongName(String longName) {
-        this.longName = longName;
-    }
 }

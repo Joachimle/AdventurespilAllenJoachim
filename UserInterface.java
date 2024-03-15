@@ -80,7 +80,7 @@ public class UserInterface {
                     if (controller.getGamePlayer().getInventory().isEmpty()) {
                         System.out.println("Your inventory is empty");
                     } else
-                        controller.getGamePlayer().getInventory();
+                        System.out.println(controller.getGamePlayer().getInventory());
                 }
 
                 default -> System.out.println("Your input is invalid");

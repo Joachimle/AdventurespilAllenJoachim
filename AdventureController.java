@@ -35,10 +35,6 @@ public class AdventureController {
        return gamePlayer.look();
     }
 
-    public void ctrlMove(String scannerDirection) {
-        gamePlayer.move(scannerDirection.toLowerCase());
-    }
-    //Methods
 
 
 }

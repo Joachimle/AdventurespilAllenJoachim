@@ -39,7 +39,7 @@ public class Player {
             playerHealth = newHealth;
         }
     }
-    public void eatFoodorItem(String shortName) {
+    public void eatFoodOrItem(String shortName) {
         Item item = findItemFromInventoryOrCurrentRoom(shortName);
         if (item == null) {
             System.out.println("you found nothing to eat");
@@ -51,10 +51,10 @@ public class Player {
     }
 
     public void takeItemAndAddToInventory(String itemName) {
-        Item item = currentRoom.searhForItemsInCurrentRoom(itemName);
+        Item item = currentRoom.searchForItemsInCurrentRoom(itemName);
         if (item != null) {
             currentRoom.removeItem(item);
-            addItem(item);
+            addItemToInventory(item);
             System.out.println("you took the: " + item.getShortName() + ".");
         } else {
             System.out.println("no item with the name : " + itemName + " exists.");
@@ -89,12 +89,7 @@ public class Player {
 
     }
 
-    public void addToInventory(Item item) {
-        inventory.add(item);
-    }
-
-
-    public void addItem(Item item) {
+    public void addItemToInventory(Item item) {
         inventory.add(item);
     }
 
@@ -105,7 +100,6 @@ public class Player {
     public ArrayList<Item> getInventory() {
         return inventory;
     }
-
 
     public Room getCurrentRoom() {
         return currentRoom;
@@ -118,7 +112,7 @@ public class Player {
     public String look() {
         StringBuilder roomInfo = new StringBuilder();
         roomInfo.append("You are in: ").append(currentRoom.getRoomName());
-        roomInfo.append("\n").append(currentRoom.getRoomDiscription());
+        roomInfo.append("\n").append(currentRoom.getRoomDescription());
         roomInfo.append("\n");
         roomInfo.append("You find the following items in the room: ");
         roomInfo.append("\n").append(currentRoom.itemsInCurrentRoom());

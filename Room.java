@@ -3,17 +3,17 @@ import java.util.ArrayList;
 public class Room {
     //attributes
     private String roomName;
-    private String roomDiscription;
+    private String roomDescription;
     private Room north, east, west, south;
     private ArrayList<Item> itemList = new ArrayList<>();
 
 
     //Constructor
-    public Room(String roomName, String roomDiscription) {
-        this.roomDiscription = roomDiscription;
+    public Room(String roomName, String roomDescription) {
+        this.roomDescription = roomDescription;
         this.roomName = roomName;
     }
-    // Metoder
+    //Methods
 
     public void addItemToCurrentRoom(Item item) {
         itemList.add(item);
@@ -32,7 +32,7 @@ public class Room {
         Item item = lookForItemsInCurrentRoom(shortName);
         itemList.remove(item);
         }
-    public Item searhForItemsInCurrentRoom(String shortName) {
+    public Item searchForItemsInCurrentRoom(String shortName) {
         for (Item i : itemList) {
             if (i.getShortName().equals(shortName)) {
                 return i;
@@ -54,8 +54,8 @@ public class Room {
         return roomName;
     }
 
-    public String getRoomDiscription() {
-        return roomDiscription;
+    public String getRoomDescription() {
+        return roomDescription;
     }
 
     public Room getSouth() {

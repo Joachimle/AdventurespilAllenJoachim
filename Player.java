@@ -18,12 +18,11 @@ public class Player {
     }
 
 
-    public Integer playerDied() {
+    public void playerDied() {
         if (playerHealth < 0) {
             System.out.println("you died");
             System.exit(0);
         }
-        return null;
     }
 
     public int getPlayerHealth() {
@@ -84,7 +83,7 @@ public class Player {
             currentRoom.addItemToCurrentRoom(item);
             System.out.println("the item " + item + " has been removed");
         } else {
-            System.out.println("no item in inventory with the name :" + item + ".");
+            System.out.println("no item in inventory with the name :" + shortName + ".");
         }
 
     }
@@ -122,10 +121,10 @@ public class Player {
     //Overført fra "Adventure del 2 review" PDF slide 15
     public boolean move(String direction){
         Room desiredRoom = switch (direction){
-            case "north", "n" -> currentRoom.getNorth();
-            case "south", "s" -> currentRoom.getSouth();
-            case "east", "e" -> currentRoom.getEast();
-            case "west", "w" -> currentRoom.getWest();
+            case "north" -> currentRoom.getNorth();
+            case "south" -> currentRoom.getSouth();
+            case "east" -> currentRoom.getEast();
+            case "west" -> currentRoom.getWest();
             default -> null;
         };
 

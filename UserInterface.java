@@ -17,14 +17,17 @@ public class UserInterface {
 
    // Methods
     public void playGame(){
-        System.out.println("Welcome");
+        System.out.println("*********************************");
+        System.out.println("*                               *");
+        System.out.println("*      THE GREAT ADVENTURE      *");
+        System.out.println("*                               *");
+        System.out.println("*******************************\n");
         userStartMenu();
 
         while (gameIsRunning) {
             command = "";
             commandParameter = "";
             command = processUserInput(scanner.next().toLowerCase());
-
             switch (command) {
 
                 case "take", "t" ->{
@@ -92,20 +95,22 @@ public class UserInterface {
     }
 
     public void userStartMenu() {
-        System.out.println("Write 'go north' to go north");
-        System.out.println("Write 'go west' to go west");
-        System.out.println("Write 'go south' to go south");
-        System.out.println("Write 'go east' to go east");
+        System.out.println("You are now ready to explore the wilderness!\n");
+        System.out.println("Please choose your next action:");
+        System.out.println("Write 'Go north' to go north");
+        System.out.println("Write 'Go west' to go west");
+        System.out.println("Write 'Go south' to go south");
+        System.out.println("Write 'Go east' to go east");
         System.out.println("Write 'Look' to go look around you");
         System.out.println("Write 'Help' to ask for help");
     }
     public void userHelp(){
         System.out.println("Write 'Look' to go look around you");
-        System.out.println("Write 'go' followed by a direction to move");
-        System.out.println("Write 'take' followed by the name of an item to put it in your inventory");
+        System.out.println("Write 'Go' followed by a direction to move");
+        System.out.println("Write 'Take' followed by the name of an item to put it in your inventory");
         System.out.println("Write 'Inventory' to look up your inventory");
-        System.out.println("Write 'eat' or 'drink' followed by the name of a food or drink in your inventory you'd like to consume");
-        System.out.println("Write 'health' to see your current health points");
+        System.out.println("Write 'Eat' or 'drink' followed by the name of a food or drink in your inventory you'd like to consume");
+        System.out.println("Write 'Health' to see your current health points");
     }
 
     //Split-method bruges til at dele kommandoen til switch-casen op i to dele -

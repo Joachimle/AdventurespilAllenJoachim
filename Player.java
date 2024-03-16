@@ -5,14 +5,14 @@ public class Player {
     //Attributes
     private Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
-    private int playerHealth = 100;
+    private int playerHealth = 0;
 
 
     //CONSTRUCTOR
     public Player(Room currentRoom) {
         this.currentRoom = currentRoom;
         this.inventory = new ArrayList<>();
-        this.playerHealth = playerHealth;
+        setPlayerHealth(100);
     }
 
 
@@ -27,13 +27,12 @@ public class Player {
         return playerHealth;
     }
 
-    public void setPlayerHealth(int newHealth) {
-        if(newHealth <= 0) { // health range er sat fra 0-100
+    public void setPlayerHealth(int changeInHealth) {
+        playerHealth += changeInHealth;
+        if(playerHealth <= 0) { // health range er sat fra 0-100
             playerDied();
-        } else if (newHealth > 100){
-
-        } else {
-            playerHealth = newHealth;
+        } else if (playerHealth > 100){
+            playerHealth = 100;
         }
     }
     public void eatFoodOrItem(String shortName) {

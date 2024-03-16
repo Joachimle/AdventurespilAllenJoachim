@@ -41,7 +41,6 @@ public class Player {
             System.out.println("you found nothing to eat");
         } else if (item instanceof Food food) {
             removeItem(item);
-            //playerHealth += food.getHealthPoints();
             setPlayerHealth(food.getHealthPoints());
             System.out.println("you gained " + food.getHealthPoints() + " HP");
         } else System.out.println(item + " is not edible");

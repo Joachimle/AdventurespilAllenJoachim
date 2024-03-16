@@ -17,7 +17,7 @@ public class Player {
 
 
     public void playerDied() {
-        if (playerHealth < 0) {
+        if (playerHealth <= 0) {
             System.out.println("you died");
             System.exit(0);
         }
@@ -42,7 +42,12 @@ public class Player {
         } else if (item instanceof Food food) {
             removeItem(item);
             setPlayerHealth(food.getHealthPoints());
-            System.out.println("you gained " + food.getHealthPoints() + " HP");
+            if (playerHealth == 100){
+                System.out.println("You consumed " + item);
+                System.out.println("You're at full HP");
+            } else {
+                System.out.println("You consumed" + item + " and gained " + food.getHealthPoints() + " HP");
+            }
         } else System.out.println(item + " is not edible");
     }
 

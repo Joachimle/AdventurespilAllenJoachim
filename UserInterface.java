@@ -113,13 +113,7 @@ public class UserInterface {
     public String processUserInput(String command){
         String[] userInputArray = command.split(" ");
         this.command = userInputArray[0];
-        if (this.command.equals("eat")){
-            commandParameter = userInputArray[1];
-            return userInputArray[0];
-        } else if (this.command.equals("drop")) {
-            commandParameter = userInputArray[1];
-            return userInputArray[0];
-        } else if (this.command.equals("take")) {
+        if (this.command.equals("eat") || this.command.equals("drink") || this.command.equals("drop") || this.command.equals("take")){
             commandParameter = userInputArray[1];
             return userInputArray[0];
         }

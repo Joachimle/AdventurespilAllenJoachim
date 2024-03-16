@@ -6,12 +6,12 @@ public class Map {
 
     //Constructor
     public Map() {
-        createRoom();
+        createMap();
     }
 
 
     //Methods
-    public void createRoom() {
+    public void createMap() {
         Room room1 = new Room("Dragekammeret", "Lysende lavastrømme gløder om æggene under himlen af skæl og flamme, mens drager hviler i dvale.");
         Room room2 = new Room("Alvekongens Salon", "Krystallignende blomster blomstrer over svajende trætoppe, mens elvere danser mellem lysende støvpartikler.");
         Room room3 = new Room("Skytårnets Bibliotek", " Skyerne omslutter svævende bøger, mens stjernehimmel-arkiver og himmelblå reoler strækker sig mod uendeligheden af viden.");

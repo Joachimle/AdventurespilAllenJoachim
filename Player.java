@@ -44,7 +44,7 @@ public class Player {
             removeItem(item);
             playerHealth += food.getHealthPoints();
             System.out.println("you gained " + food.getHealthPoints());
-        } else System.out.println(item + " Not eatable");
+        } else System.out.println(item + " Not edible");
     }
 
     public void takeItemAndAddToInventory(String itemName) {

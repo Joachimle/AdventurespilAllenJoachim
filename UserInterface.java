@@ -35,6 +35,9 @@ public class UserInterface {
                     String itemToDrop = commandParameter;
                     controller.getGamePlayer().dropItemInCurrentRoom(itemToDrop);
                 }
+                case "eat", "drink" -> {
+                    controller.getGamePlayer().eatFoodOrItem(commandParameter);
+                }
                 case "go north", "north", "n" -> {
                     if (controller.getGamePlayer().move("north")){
                         System.out.println("Going north");

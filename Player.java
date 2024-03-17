@@ -6,6 +6,7 @@ public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
     private int playerHealth = 0;
+    private Weapon currentWeapon;
 
 
     //CONSTRUCTOR
@@ -49,6 +50,19 @@ public class Player {
                 System.out.println("You consumed" + item + " and gained " + food.getHealthPoints() + " HP");
             }
         } else System.out.println(item + " is not edible");
+    }
+    public void equipWeapon(String shortName){
+        Item equippedWeapon = findItemFromInventoryOrCurrentRoom(shortName);
+        if (equippedWeapon == null){
+            System.out.println("you have nothing to equip");
+        }else if(equippedWeapon instanceof Weapon){
+            currentWeapon = (Weapon)equippedWeapon;
+            getCurrentRoom().removeItem(equippedWeapon);
+            inventory.remove(equippedWeapon);
+            System.out.println("you equipped " + equippedWeapon);
+        }else {
+            System.out.println("you cant equip this item");
+        }
     }
 
     public void takeItemAndAddToInventory(String itemName) {

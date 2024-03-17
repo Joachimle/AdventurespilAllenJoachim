@@ -1,5 +1,5 @@
 public class Item {
-    private String shortName;
+    String shortName;
     private String longName;
 
 

@@ -1,8 +1,6 @@
 public class Map {
     //Attributes
     private Room firstRoom;
-    private Item item;
-    private Food food;
 
     //Constructor
     public Map() {

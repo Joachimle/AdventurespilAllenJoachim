@@ -31,7 +31,8 @@ public class Room {
     public void deleteItemFromCurrentRoom(String shortName) {
         Item item = lookForItemsInCurrentRoom(shortName);
         itemList.remove(item);
-        }
+    }
+
     public Item searchForItemsInCurrentRoom(String shortName) {
         for (Item i : itemList) {
             if (i.getShortName().equals(shortName)) {
@@ -40,13 +41,14 @@ public class Room {
         }
         return null;
     }
+
     public void removeItem(Item item) {
         itemList.remove(item);
     }
+
     public ArrayList<Item> itemsInCurrentRoom() {
         return itemList;
     }
-
 
 
     // Getter & setter Methods

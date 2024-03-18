@@ -85,8 +85,10 @@ public class UserInterface {
                 case "inventory", "inv", "i" -> {
                     if (controller.getGamePlayer().getInventory().isEmpty()) {
                         System.out.println("Your inventory is empty");
-                    } else
+                    } else {
                         System.out.println(controller.getGamePlayer().getInventory());
+                        System.out.println(controller.getGamePlayer().getCurrentWeapon());
+                    }
                 }
 
                 default -> System.out.println("Your input is invalid - try writing something else");

@@ -7,6 +7,7 @@ public class Player {
     private ArrayList<Item> inventory = new ArrayList<>();
     private int playerHealth = 0;
     private Weapon currentWeapon;
+    private Weapon weapon;
 
 
     //CONSTRUCTOR
@@ -52,18 +53,35 @@ public class Player {
         } else System.out.println(item + " is not edible");
     }
     public void equipWeapon(String shortName){
-        Item equippedWeapon = findItemFromInventoryOrCurrentRoom(shortName);
-        if (equippedWeapon == null){
-            System.out.println("you have nothing to equip");
-        }else if(equippedWeapon instanceof Weapon){
-            currentWeapon = (Weapon)equippedWeapon;
-            getCurrentRoom().removeItem(equippedWeapon);
-            inventory.remove(equippedWeapon);
-            System.out.println("you equipped " + equippedWeapon);
-        }else {
-            System.out.println("you cant equip this item");
+        Item equippedWeapon = findItemFromInventory(shortName);
+
+               // if (equippedWeapon.getShortName().equalsIgnoreCase(shortName)) { // der bliver kun vist items shortName
+                    if (equippedWeapon instanceof Weapon) { // det her er hvis item har et instance af weapon og equiooedweapon er et weapon item
+                        equippedWeapon = currentWeapon;
+                        System.out.println("You have equipped " + shortName + ".");
+
+                    } else {
+                        System.out.println(shortName + " is not a weapon!");
+                    }
+
+            System.out.println("You don't have " + shortName + " in your inventory.");
         }
-    }
+       // weapon = weapon;
+       // if (equippedWeapon == null){
+          //  System.out.println("you have nothing to equip");
+        //} else if (findItemFromInventory()!= Weapon) {
+         //   System.out.println(" The item you equiped is not a wepon");
+
+      //  }
+
+        // else if(equippedWeapon instanceof Weapon){
+           // currentWeapon = (Weapon)equippedWeapon;
+           //getCurrentRoom().removeItem(equippedWeapon);
+         //  inventory.remove(equippedWeapon);
+        //  System.out.println("you equipped " + equippedWeapon);
+       // }else {
+       //     System.out.println("you cant equip this item");
+//}
 
     public void takeItemAndAddToInventory(String itemName) {
         Item item = currentRoom.searchForItemsInCurrentRoom(itemName);

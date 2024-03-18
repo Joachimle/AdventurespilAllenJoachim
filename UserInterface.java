@@ -41,6 +41,10 @@ public class UserInterface {
                 case "eat", "drink" -> {
                     controller.getGamePlayer().eatFoodOrItem(commandParameter);
                 }
+                case "attack", "a" -> {
+                    controller.attack();
+                    System.out.println("Remaining attacks " + controller.getGamePlayer().getCurrentWeapon().getAmmo());
+                }
                 case "go north", "north", "n" -> {
                     if (controller.getGamePlayer().move("north")){
                         System.out.println("Going north");

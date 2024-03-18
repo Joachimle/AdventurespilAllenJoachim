@@ -10,9 +10,6 @@ public class RangedWeapon extends Weapon {
         this.remainingUses = remainingUses;
     }
 
-    public int getRemainingUse() {
-        return remainingUses;
-    }
 
     public void setRemainingUses(int remainingUses) {
         this.remainingUses = remainingUses;

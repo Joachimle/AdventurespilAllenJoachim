@@ -89,6 +89,14 @@ public class Player {
         }
         return null;
     }
+    public Item findItemFromInventory(String shortName){
+        for (Item i : inventory){
+            if (i.getShortName().equals(shortName)){
+                return i;
+            }
+        }
+        return null;
+    }
 
     //removes item from inventory
     public void dropItemInCurrentRoom(String shortName) {

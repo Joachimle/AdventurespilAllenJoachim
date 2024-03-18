@@ -1,16 +1,19 @@
 public abstract class Weapon extends Item {
     //Attributes
+    private int damageDoneToOpponentPerStrike;
 
     //Constructor
-    public Weapon(String shortName, String longName) {
-
+    public Weapon(String shortName, String longName, int damageDoneToOpponentPerStrike) {
         super(shortName, longName); //calls item constructor
+        this.damageDoneToOpponentPerStrike = damageDoneToOpponentPerStrike;
     }
-    //Weapon methods for use in subclasses
-    public abstract void useWeapon();
+
+    //Getter
+    public int getDamageDoneToOpponentPerStrike() {
+        return damageDoneToOpponentPerStrike;
+    }
 
     //public abstract int remainingUses(); //overridden in RangedWeapon class to keep count of remaining uses of the ranged weapon
 
-    public abstract boolean canUse(); //overridden in RangedWeapon class to decide if the ranged weapon is usable
-
+    public abstract boolean canUse() ; //overridden in RangedWeapon class to decide if the ranged weapon is usable
 }

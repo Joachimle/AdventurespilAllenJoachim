@@ -18,6 +18,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return getLongName();
+        return getShortName();
     }
 }

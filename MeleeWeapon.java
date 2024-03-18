@@ -5,18 +5,13 @@ public class MeleeWeapon extends Weapon {
 
     //KONSTRUKTØR
     public MeleeWeapon(String shortName, String longName, int damageDoneToOpponentPerStrike) {
-        super(shortName, longName);
-        this.damageDoneToOpponentPerStrike = damageDoneToOpponentPerStrike;
+        super(shortName, longName, damageDoneToOpponentPerStrike);
     }
 
     //GETTER METODE
     public int getDamageDoneToOpponentPerStrike(){
         return damageDoneToOpponentPerStrike;}
 
-    @Override
-    public void useWeapon() {
-
-    }
 
     @Override
     public boolean canUse() {

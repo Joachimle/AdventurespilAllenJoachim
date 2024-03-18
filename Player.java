@@ -29,6 +29,10 @@ public class Player {
         return playerHealth;
     }
 
+    public Weapon getCurrentWeapon() {
+        return currentWeapon;
+    }
+
     public void setPlayerHealth(int changeInHealth) {
         playerHealth += changeInHealth;
         if(playerHealth <= 0) { // health range er sat fra 0-100

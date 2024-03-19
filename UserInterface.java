@@ -41,9 +41,13 @@ public class UserInterface {
                 case "eat", "drink" -> {
                     controller.getGamePlayer().eatFoodOrItem(commandParameter);
                 }
-                case "attack", "a" -> {
+                case "attack" -> {
                     controller.attackEnemy();
                     System.out.println("Remaining attacks " + controller.getGamePlayer().getCurrentWeapon().getAmmo());
+                }
+                case "equip" -> {
+                    controller.getGamePlayer().equipWeapon(commandParameter);
+                    System.out.println("You equipped " + controller.getGamePlayer().getCurrentWeapon());
                 }
                 case "go north", "north", "n" -> {
                     if (controller.getGamePlayer().move("north")){
@@ -124,7 +128,7 @@ public class UserInterface {
     public String processUserInput(String command){
         String[] userInputArray = command.split(" ");
         this.command = userInputArray[0];
-        if (this.command.equals("eat") || this.command.equals("drink") || this.command.equals("drop") || this.command.equals("take")){
+        if (this.command.equals("eat") || this.command.equals("drink") || this.command.equals("drop") || this.command.equals("take") || this.command.equals("equip") || this.command.equals("attack")){
             commandParameter = userInputArray[1];
             return userInputArray[0];
         }

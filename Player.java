@@ -82,7 +82,7 @@ public class Player {
 
         } else  if(equippedWeapon instanceof Food){
             System.out.println(shortName + " is not a weapon!");
-            equippedWeapon=null;
+            equippedWeapon = null;
         }
 
         System.out.println("You don't have " + shortName + " in your inventory.");

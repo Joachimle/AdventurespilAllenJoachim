@@ -88,7 +88,7 @@ public class Player {
         System.out.println("You don't have " + shortName + " in your inventory.");
     }
 
-}
+
 
 // weapon = weapon;
        // if (equippedWeapon == null){

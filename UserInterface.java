@@ -42,7 +42,7 @@ public class UserInterface {
                     controller.getGamePlayer().eatFoodOrItem(commandParameter);
                 }
                 case "attack", "a" -> {
-                    controller.attack();
+                    controller.attackEnemy();
                     System.out.println("Remaining attacks " + controller.getGamePlayer().getCurrentWeapon().getAmmo());
                 }
                 case "go north", "north", "n" -> {

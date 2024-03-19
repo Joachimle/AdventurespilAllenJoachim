@@ -36,12 +36,25 @@ public class AdventureController {
     }
 
     //Weapon methods for use in subclasses
-    public void attack() {
+//    public void attack() {
+//        getGamePlayer().getCurrentWeapon().getDamageDoneToOpponentPerStrike();
+//        if (getGamePlayer().getCurrentWeapon() instanceof RangedWeapon) {
+//            ((RangedWeapon) getGamePlayer().getCurrentWeapon()).setRemainingUses(getGamePlayer().getCurrentWeapon().getAmmo() - 1);
+//        } else {
+//            System.out.println("You dont have a weapon");
+//        }
+//    }
+
+    public void attackEnemy() {
         getGamePlayer().getCurrentWeapon().getDamageDoneToOpponentPerStrike();
-        if (getGamePlayer().getCurrentWeapon() instanceof RangedWeapon) {
-            ((RangedWeapon) getGamePlayer().getCurrentWeapon()).setRemainingUses(getGamePlayer().getCurrentWeapon().getAmmo() - 1);
+        if (getGamePlayer().getCurrentWeapon() == null) {
+            System.out.println("You need to equip a weapon first to attack");
+
+
         } else {
-            System.out.println("You dont have a weapon");
+
+            getGamePlayer().getCurrentWeapon().canUse();
+
         }
     }
 }

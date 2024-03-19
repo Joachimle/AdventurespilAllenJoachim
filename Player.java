@@ -70,7 +70,27 @@ public class Player {
 
             System.out.println("You don't have " + shortName + " in your inventory.");
         }
-       // weapon = weapon;
+
+
+    public void equipWeaponA(String shortName){
+        Item equippedWeapon = findItemFromInventory(shortName);
+
+        // if (equippedWeapon.getShortName().equalsIgnoreCase(shortName)) { // der bliver kun vist items shortName
+        if (equippedWeapon instanceof Weapon) { // det her er hvis item har et instance af weapon og equiooedweapon er et weapon item
+            equippedWeapon = currentWeapon;
+            System.out.println("You have equipped " + shortName + ".");
+
+        } else  if(equippedWeapon instanceof Food){
+            System.out.println(shortName + " is not a weapon!");
+            equippedWeapon=null;
+        }
+
+        System.out.println("You don't have " + shortName + " in your inventory.");
+    }
+
+}
+
+// weapon = weapon;
        // if (equippedWeapon == null){
           //  System.out.println("you have nothing to equip");
         //} else if (findItemFromInventory()!= Weapon) {

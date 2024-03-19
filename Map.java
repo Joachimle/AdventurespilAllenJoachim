@@ -25,56 +25,58 @@ public class Map {
         //ROOM 1
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.addItemToCurrentRoom(new Food("vin", "En 100 år gammel rosindrik", -15));
-        room1.addItemToCurrentRoom(new MeleeWeapon("kniv", "Den vildeste kniv i byen", 10));
+        room1.addItemToCurrentRoom(new Food("wine", " a bottle of red wine", -15));
+        room1.addItemToCurrentRoom(new MeleeWeapon("knife", " The sharpest hunting knife", 15));
 
         //ROOM 2
         room2.setWest(room1);
         room2.setEast(room3);
-        room2.addItemToCurrentRoom(new Food("muslibar", "Muslibar med tranebær, citron og hasselnødder", 5));
-        room2.addItemToCurrentRoom(new Food("bolle", "en bolle med ost og smør", 20));
-        room2.addItemToCurrentRoom(new RangedWeapon("dessertEagle", "Den tungeste dreng i byen", 25, 10));
+        room2.addItemToCurrentRoom(new Food("Energy bar", " A proteing bar with strawberryflavour",70));
+        room2.addItemToCurrentRoom(new Food(" Pie", "Apple pie", 20));
 
         //ROOM 3
         room3.setWest(room2);
         room3.setSouth(room6);
-        room3.addItemToCurrentRoom(new Food("rugbrød", "Rugbrød med leverpostej, rødbedder og peber", 10));
-        room3.addItemToCurrentRoom(new Food("agurk", "Den saftigste agurk i byen", 5));
+        room3.addItemToCurrentRoom(new Food(" cookie", "chockolate cookie", 10));
+        room3.addItemToCurrentRoom(new Food("Sausage", " juicy sausage", 40));
+        room2.addItemToCurrentRoom(new RangedWeapon("Rifle", " laser rifle", 50, 15));
 
         //ROOM 4
         room4.setNorth(room1);
         room4.setSouth(room7);
-        room4.addItemToCurrentRoom(new Food("kakaodrik", "Supreme Chokomel drik", 15));
-        room4.addItemToCurrentRoom(new Food("grapefrugt", "En råden grapefrugt", -10));
-        room4.addItemToCurrentRoom(new MeleeWeapon("kølle", "Dolphs Kølle: DØDMEDKØLLE", 5));
+        room4.addItemToCurrentRoom(new Food("ChocoMilk", "Supreme Chocolate milk", 15));
+        room4.addItemToCurrentRoom(new Food("pancakes", " Fluffy American pancakes ", -10));
 
         //ROOM 5
         room5.setSouth(room8);
+        room4.addItemToCurrentRoom(new RangedWeapon("Crossbow", " Hunting crossbow ", 30, 10));
 
         //ROOM 6
         room6.setNorth(room3);
         room6.setSouth(room9);
-        room6.addItemToCurrentRoom((new Food("fastelavnsbolle", "Den dyre fra Lagkagehuset", 20)));
-        room6.addItemToCurrentRoom((new Food("kylling", "Rå kylling der har ligget lidt for længe", -15)));
+        room6.addItemToCurrentRoom((new Food("Bread", "Nutritious brown bred with butter ", 20)));
+        room6.addItemToCurrentRoom((new Food("Chicken", "Raw chicken", -15)));
 
         //ROOM 7
         room7.setNorth(room4);
         room7.setEast(room8);
-        room7.addItemToCurrentRoom(new Food("insekter", "Et glas insekter spicet op med BBQ", 10));
-        room7.addItemToCurrentRoom(new Food("kaffe", "En kop varm kaffe af mærket Merrild", 0));
+        room7.addItemToCurrentRoom(new Food("Burger", " Beef burger with bbq ", 25));
+        room7.addItemToCurrentRoom(new Food(" Water", " Cold fresh mountain water", 5));
+        room1.addItemToCurrentRoom(new MeleeWeapon("Greataxe", " Two faced greataxe", 15));
 
         //ROOM 8
         room8.setWest(room7);
         room8.setNorth(room5);
         room8.setEast(room9);
-        room8.addItemToCurrentRoom(new Food("energidrik", "Den helt billige sukkerfri fra Lidl", 5));
-        room8.addItemToCurrentRoom(new Food("flaske vand", "En halvtom,lun flaske kildevand", 5));
+        room8.addItemToCurrentRoom(new Food("EnergyDrink", " RedBull energy drink", 10));
+        room8.addItemToCurrentRoom(new Food("Cheese", " Cheese with black spots", -5));
 
         //ROOM 9
         room9.setWest(room8);
         room9.setNorth(room6);
-        room9.addItemToCurrentRoom(new Food("majs", "En bøtte dåsemajs der udløb for 5 år siden", -10));
-        room9.addItemToCurrentRoom(new Food("glögg", "En flaske alkoholfri Glögg fra Remam 1000", 3));
+        room9.addItemToCurrentRoom(new Food(" Bananas", " A hand of sweet bananas", 10));
+        room9.addItemToCurrentRoom(new Food("Pizza", "Neapolitan Pizza ", 30));
+        room4.addItemToCurrentRoom(new RangedWeapon("Blowgun", " Hunting blow gun with 20 darts ", 20, 10));
     }
 
     public Room getFirstRoom() {

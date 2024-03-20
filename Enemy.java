@@ -3,6 +3,8 @@ public class Enemy {
     private String enemyDescription;
     private int enemyHealthPoints;
     private Weapon enemyWeapon;
+    private int enemyDamageDone;
+    private int enemyWeaponDamage;
 
   //constructor
     public Enemy(String enemyName, String enemyDescription, int enemyHealthPoints, Weapon enemyWeapon){
@@ -25,10 +27,17 @@ public class Enemy {
         return enemyHealthPoints;
     }
 
+    public int getEnemyWeaponDamage(){
+        return enemyWeapon.getDamagePerAttack();
+    }
+    public void setEnemyDamageDone(int enemyDamageDone) {
+        this.enemyDamageDone = enemyDamageDone;
+    }
+
     /// Attack metoden skal laves færdig
     public void enemyAttack(Player player){
-        System.out.println(enemyName+" attaks"+ player.getPlayerHealth()+ "with"+ enemyWeapon);
-
+        System.out.println(enemyName+" attacks");
+        setEnemyDamageDone(getEnemyWeaponDamage());
     }
 
     public boolean enemyDied() {

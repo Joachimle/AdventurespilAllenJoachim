@@ -17,12 +17,6 @@ public class Player {
     }
 
     //Simple methods including getters and setters
-    public void playerDied() {
-        if (playerHealth <= 0) {
-            System.out.println("you died");
-            System.exit(0);
-        }
-    }
     public int getPlayerHealth() {
         return playerHealth;
     }
@@ -87,6 +81,18 @@ public class Player {
             }
         }
         return null;
+    }
+    public void playerDied() {
+        if (playerHealth <= 0) {
+            System.out.println("you died");
+            System.exit(0);
+        }
+    }
+    public void playerHit(int damageTaken){
+        playerHealth -= damageTaken;
+        if (playerHealth <= 0) {
+            playerDied();
+        }
     }
 
     //Methods for commands in UI

@@ -2,7 +2,7 @@ public abstract class Weapon extends Item {
 
     //Attributes
     private int damagePerAttack;
-    private int ammo;
+    private int remainingUses;
 
     //Constructor
     public Weapon(String shortName, String longName, int damagePerAttack) {
@@ -15,15 +15,17 @@ public abstract class Weapon extends Item {
         return damagePerAttack;
     }
 
-    public int getAmmo() {
-        return ammo;
-    }
-
     public void setDamagePerAttack(int damagePerAttack) {
         this.damagePerAttack = damagePerAttack;
     }
 
-    //public abstract int remainingUses(); //overridden in RangedWeapon class to keep count of remaining uses of the ranged weapon
+    public int getRemainingUses() {
+        return remainingUses;
+    }
+
+    public void setRemainingUses(int remainingUses) {
+        this.remainingUses = remainingUses;
+    }
 
     public abstract boolean canUse() ; //overridden in RangedWeapon class to decide if the ranged weapon is usable
 }

@@ -116,6 +116,7 @@ public class Player {
         if (getCurrentWeapon() == null) {
             System.out.println("You need to equip a weapon first to attack");
         } else if (getCurrentWeapon().canUse()){
+            getCurrentWeapon().setRemainingUses(currentWeapon.getRemainingUses()-1);
             setPlayerDamageDone(getCurrentWeapon().getDamagePerAttack());
         } else {
             System.out.println("You can't use your current weapon");

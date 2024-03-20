@@ -44,7 +44,7 @@ public class UserInterface {
                 }
                 case "attack" -> {
                     controller.getGamePlayer().playerAttack();
-                    System.out.println("Remaining attacks " + controller.getGamePlayer().getCurrentWeapon().getAmmo());
+                    System.out.println("Remaining attacks " + controller.getGamePlayer().getCurrentWeapon().getRemainingUses());
                 }
                 case "equip" -> {//Der er en bug, der får programmet til at crashe hvis man ikke skriver noget efter "equip"
                         controller.getGamePlayer().equipWeapon(commandParameter);

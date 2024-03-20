@@ -46,10 +46,9 @@ public class UserInterface {
                     controller.getGamePlayer().playerAttack();
                     System.out.println("Remaining attacks " + controller.getGamePlayer().getCurrentWeapon().getRemainingUses());
                 }
-                case "equip" -> {//Der er en bug, der får programmet til at crashe hvis man ikke skriver noget efter "equip"
+                case "equip" -> {
                         controller.getGamePlayer().equipWeapon(commandParameter);
                         System.out.println("You equipped " + controller.getGamePlayer().getCurrentWeapon());
-
                 }
                 case "go north", "north", "n" -> {
                     if (controller.getGamePlayer().move("north")){
@@ -131,6 +130,7 @@ public class UserInterface {
 
     //Split-method bruges til at dele kommandoen til switch-casen op i to dele -
     // - så spilleren f.eks. kan skrive "take example" for at tilgå "take" i switch og derefter videresende "example" til take-metoden i Player
+    /////////OBS! Der er en bug, der får programmet til at crashe hvis man ikke skriver noget efter command (f.eks. "equip")/////////
     public String processUserInput(String command){
         String[] userInputArray = command.split(" ");
         this.command = userInputArray[0];

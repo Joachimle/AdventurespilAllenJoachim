@@ -56,7 +56,7 @@ public class Player {
         } else System.out.println(item + " is not edible");
     }
 
-    public void equipWeapon(String shortName){
+    public void equipWeapon(String shortName){ ////////OBS SKAL RETURNERE WEAPON OG IKKE VOID/////////
         Item equippedWeapon = findItemFromInventory(shortName);
 
         if (equippedWeapon instanceof Weapon) { // det her er hvis item har et instance af weapon og equiooedweapon er et weapon item

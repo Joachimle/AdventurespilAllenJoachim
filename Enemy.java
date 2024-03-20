@@ -1,14 +1,16 @@
 public class Enemy {
     private String enemyName;
     private String enemyDescription;
-    private int healthPoints;
+    private int enemyHealthPoints;
     private Weapon enemyWeapon;
+    private int enemyDamageDone;
+    private int enemyWeaponDamage;
 
   //constructor
-    public Enemy(String enemyDescription, String enemyName, int healthPoints, Weapon enemyWeapon){
-        this.enemyDescription = enemyDescription;
+    public Enemy(String enemyName, String enemyDescription, int enemyHealthPoints, Weapon enemyWeapon){
         this.enemyName = enemyName;
-        this.healthPoints = healthPoints;
+        this.enemyDescription = enemyDescription;
+        this.enemyHealthPoints = enemyHealthPoints;
         this.enemyWeapon = enemyWeapon;
     }
 
@@ -21,29 +23,39 @@ public class Enemy {
         return enemyName;
     }
 
-    public int getHealthPoints() {
-        return healthPoints;
+    public int getEnemyHealthPoints() {
+        return enemyHealthPoints;
+    }
+
+    public int getEnemyWeaponDamage(){
+        return enemyWeapon.getDamagePerAttack();
+    }
+    public void setEnemyDamageDone(int enemyDamageDone) {
+        this.enemyDamageDone = enemyDamageDone;
     }
 
     /// Attack metoden skal laves færdig
     public void enemyAttack(Player player){
-        System.out.println(enemyName+ enemyDescription+" attaks"+ player.getPlayerHealth()+ "with"+ enemyWeapon);
-
+        System.out.println(enemyName+" attacks");
+        setEnemyDamageDone(getEnemyWeaponDamage());
     }
 
-    public void death(){
-        System.out.println(enemyName + enemyDescription +"you have been defeated");
-        dropWeapon();
+    public boolean enemyDied() {
+        if (enemyHealthPoints <= 0) {
+            System.out.println(enemyName +" have been defeated");
+            dropWeapon();
+            return true;
+        }
+        return false;
     }
-
     public void enemyHit(int damageTaken){
-        healthPoints -= damageTaken;
-        if(healthPoints <= 0){
-            death();
+        enemyHealthPoints -= damageTaken;
+        if(enemyHealthPoints <= 0){
+            enemyDied();
         }
     }
 
     public void dropWeapon(){
-    System.out.println(enemyName + enemyDescription + " drops" + enemyWeapon);
+    System.out.println(enemyName + enemyWeapon + " drops" + enemyWeapon);
     }
 }

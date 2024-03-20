@@ -17,18 +17,16 @@ public class Player {
     }
 
     //Simple methods including getters and setters
-    public void playerDied() {
-        if (playerHealth <= 0) {
-            System.out.println("you died");
-            System.exit(0);
-        }
-    }
     public int getPlayerHealth() {
         return playerHealth;
     }
 
     public Weapon getCurrentWeapon() {
         return currentWeapon;
+    }
+
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
 
     public ArrayList<Item> getInventory() {
@@ -84,6 +82,20 @@ public class Player {
         }
         return null;
     }
+    public boolean playerDied() {
+        if (playerHealth <= 0) {
+            System.out.println("you died");
+            System.exit(0);
+            return true;
+        }
+        return false;
+    }
+    public void playerHit(int damageTaken){
+        playerHealth -= damageTaken;
+        if (playerHealth <= 0) {
+            playerDied();
+        }
+    }
 
     //Methods for commands in UI
     public void eatFoodOrItem(String shortName) {
@@ -112,10 +124,8 @@ public class Player {
             System.out.println(shortName + " is not a weapon!");
         }
     }
-    public void playerAttack() {
-        if (getCurrentWeapon() == null) {
-            System.out.println("You need to equip a weapon first to attack");
-        } else if (getCurrentWeapon().canUse()){
+    public void playerAttack(String enemyName) {
+        if (getCurrentWeapon().canUse()){
             getCurrentWeapon().setRemainingUses(currentWeapon.getRemainingUses()-1);
             setPlayerDamageDone(getCurrentWeapon().getDamagePerAttack());
         } else {
@@ -155,6 +165,9 @@ public class Player {
         roomInfo.append("\n");
         roomInfo.append("You find the following items in the room: ");
         roomInfo.append("\n").append(currentRoom.itemsInCurrentRoom());
+        roomInfo.append("\n");
+        roomInfo.append("You spot the following enemies in the room: ");
+        roomInfo.append("\n").append(currentRoom.enemiesInCurrentRoom());
         return roomInfo.toString();
     }
 

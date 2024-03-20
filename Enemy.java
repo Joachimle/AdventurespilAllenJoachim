@@ -5,9 +5,9 @@ public class Enemy {
     private Weapon enemyWeapon;
 
   //constructor
-    public Enemy(String enemyDescription, String enemyName, int healthPoints, Weapon enemyWeapon){
-        this.enemyDescription = enemyDescription;
+    public Enemy(String enemyName, String enemyDescription, int healthPoints, Weapon enemyWeapon){
         this.enemyName = enemyName;
+        this.enemyDescription = enemyDescription;
         this.healthPoints = healthPoints;
         this.enemyWeapon = enemyWeapon;
     }

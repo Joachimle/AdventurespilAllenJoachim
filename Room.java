@@ -6,6 +6,7 @@ public class Room {
     private String roomDescription;
     private Room north, east, west, south;
     private ArrayList<Item> itemList = new ArrayList<>();
+    private ArrayList<Enemy> enemyList = new ArrayList<>();
 
     //Constructor
     public Room(String roomName, String roomDescription) {
@@ -35,6 +36,26 @@ public class Room {
         return itemList;
     }
 
+    //Enemy-methods
+    public void addEnemyToCurrentRoom(Enemy enemyName){
+        enemyList.add(enemyName);
+    }
+    public Enemy searchForEnemiesInCurrentRoom(String enemyName) {
+        for (Enemy enemy : enemyList) {
+            if (enemy.getEnemyName().equals(enemyName)) {
+                return enemy;
+            }
+        }
+        return null;
+    }
+    //Removes/deletes item from current room
+    public void removeEnemy(Enemy enemy) {
+        enemyList.remove(enemy);
+    }
+
+    public ArrayList<Enemy> enemiesInCurrentRoom() {
+        return enemyList;
+    }
 
     // Getter & setter Methods
     public String getRoomName() {

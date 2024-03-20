@@ -26,6 +26,7 @@ public class Map {
         room1.setSouth(room4);
         room1.addItemToCurrentRoom(new Food("wine", " a bottle of red wine", -15));
         room1.addItemToCurrentRoom(new MeleeWeapon("knife", " The sharpest hunting knife", 15));
+        room1.addEnemyToCurrentRoom(new Enemy("potatoes", "A great big sack of potatoes", 35, new MeleeWeapon("potatopeeler", "A truly fearsome potatopeeler", 15)));
 
         //ROOM 2
         room2.setWest(room1);

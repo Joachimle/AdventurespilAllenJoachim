@@ -9,7 +9,7 @@ public class MeleeWeapon extends Weapon {
     }
 
     //GETTER METODE
-    public int getDamageDoneToOpponentPerStrike(){
+    public int getDamagePerAttack(){
         return damageDoneToOpponentPerStrike;}
 
 

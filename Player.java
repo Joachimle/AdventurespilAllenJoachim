@@ -7,6 +7,7 @@ public class Player {
     private ArrayList<Item> inventory = new ArrayList<>();
     private int playerHealth = 0;
     private Weapon currentWeapon;
+    private int playerDamageDone;
 
     //CONSTRUCTOR
     public Player(Room currentRoom) {
@@ -15,19 +16,31 @@ public class Player {
         setPlayerHealth(100);
     }
 
+    //Simple methods including getters and setters
     public void playerDied() {
         if (playerHealth <= 0) {
             System.out.println("you died");
             System.exit(0);
         }
     }
-
     public int getPlayerHealth() {
         return playerHealth;
     }
 
     public Weapon getCurrentWeapon() {
         return currentWeapon;
+    }
+
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
+
+    public int getPlayerDamageDone() {
+        return playerDamageDone;
+    }
+
+    public void setPlayerDamageDone(int playerDamageDone) {
+        this.playerDamageDone = playerDamageDone;
     }
 
     public void setPlayerHealth(int changeInHealth) {
@@ -41,6 +54,38 @@ public class Player {
     public void setCurrentWeapon(Weapon weapon){
         this.currentWeapon = weapon;
     }
+
+    public void addItemToInventory(Item item) {
+        inventory.add(item);
+    }
+
+    public void removeItem(Item item) {
+        inventory.remove(item);
+    }
+
+    public Item findItemFromInventoryOrCurrentRoom(String shortName) {
+        for (Item i : inventory) {
+            if (i.getShortName().equals(shortName)) {
+                return i;
+            }
+        }
+        for (Item i : currentRoom.itemsInCurrentRoom()) {
+            if (i.getShortName().equals(shortName)) {
+                return i;
+            }
+        }
+        return null;
+    }
+    public Item findItemFromInventory(String shortName){
+        for (Item i : inventory){
+            if (i.getShortName().equals(shortName)){
+                return i;
+            }
+        }
+        return null;
+    }
+
+    //Methods for commands in UI
     public void eatFoodOrItem(String shortName) {
         Item item = findItemFromInventoryOrCurrentRoom(shortName);
         if (item == null) {
@@ -67,6 +112,15 @@ public class Player {
             System.out.println(shortName + " is not a weapon!");
         }
     }
+    public void playerAttack() {
+        if (getCurrentWeapon() == null) {
+            System.out.println("You need to equip a weapon first to attack");
+        } else if (getCurrentWeapon().canUse()){
+            setPlayerDamageDone(getCurrentWeapon().getDamagePerAttack());
+        } else {
+            System.out.println("You can't use your current weapon");
+        }
+    }
 
     public void takeItemAndAddToInventory(String itemName) {
         Item item = currentRoom.searchForItemsInCurrentRoom(itemName);
@@ -77,28 +131,6 @@ public class Player {
         } else {
             System.out.println("no item with the name : " + itemName + " exists.");
         }
-    }
-
-    public Item findItemFromInventoryOrCurrentRoom(String shortName) {
-        for (Item i : inventory) {
-            if (i.getShortName().equals(shortName)) {
-                return i;
-            }
-        }
-        for (Item i : currentRoom.itemsInCurrentRoom()) {
-            if (i.getShortName().equals(shortName)) {
-                return i;
-            }
-        }
-        return null;
-    }
-    public Item findItemFromInventory(String shortName){
-        for (Item i : inventory){
-            if (i.getShortName().equals(shortName)){
-                return i;
-            }
-        }
-        return null;
     }
 
     //removes item from inventory
@@ -113,22 +145,6 @@ public class Player {
             System.out.println("no item in inventory with the name :" + shortName + ".");
         }
 
-    }
-
-    public Room getCurrentRoom() {
-        return currentRoom;
-    }
-
-    public void addItemToInventory(Item item) {
-        inventory.add(item);
-    }
-
-    public void removeItem(Item item) {
-        inventory.remove(item);
-    }
-
-    public ArrayList<Item> getInventory() {
-        return inventory;
     }
 
     public String look() {

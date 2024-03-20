@@ -7,8 +7,6 @@ public class Player {
     private ArrayList<Item> inventory = new ArrayList<>();
     private int playerHealth = 0;
     private Weapon currentWeapon;
-    private Weapon weapon;
-
 
     //CONSTRUCTOR
     public Player(Room currentRoom) {
@@ -40,6 +38,9 @@ public class Player {
             playerHealth = 100;
         }
     }
+    public void setCurrentWeapon(Weapon weapon){
+        this.currentWeapon = weapon;
+    }
     public void eatFoodOrItem(String shortName) {
         Item item = findItemFromInventoryOrCurrentRoom(shortName);
         if (item == null) {
@@ -56,19 +57,15 @@ public class Player {
         } else System.out.println(item + " is not edible");
     }
 
-    public void equipWeapon(String shortName){ ////////OBS SKAL RETURNERE WEAPON OG IKKE VOID/////////
-        Item equippedWeapon = findItemFromInventory(shortName);
-
-        if (equippedWeapon instanceof Weapon) { // det her er hvis item har et instance af weapon og equiooedweapon er et weapon item
-            equippedWeapon = currentWeapon;
-            System.out.println("You have equipped " + shortName + ".");
-
-        } else  if(equippedWeapon instanceof Food){
+    public void equipWeapon(String shortName){
+        Item itemToEquip = findItemFromInventory(shortName);
+        if (itemToEquip == null){
+            System.out.println(shortName + " is not in your inventory");
+        } else if (itemToEquip instanceof Weapon) {
+            setCurrentWeapon((Weapon) itemToEquip);
+        } else {
             System.out.println(shortName + " is not a weapon!");
-            equippedWeapon = null;
         }
-
-        System.out.println("You don't have " + shortName + " in your inventory.");
     }
 
     public void takeItemAndAddToInventory(String itemName) {

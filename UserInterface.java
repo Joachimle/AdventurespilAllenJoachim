@@ -95,7 +95,7 @@ public class UserInterface {
                         System.out.println("Your inventory is empty");
                     } else {
                         System.out.println(controller.getGamePlayer().getInventory());
-                        System.out.println(controller.getGamePlayer().getCurrentWeapon());
+                        System.out.println("Equipped weapon: " + controller.getGamePlayer().getCurrentWeapon());
                     }
                 }
 

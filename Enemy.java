@@ -27,12 +27,12 @@ public class Enemy {
 
     /// Attack metoden skal laves færdig
     public void enemyAttack(Player player){
-        System.out.println(enemyName+" attaks"+ player.getPlayerHealth()+ "with"+ enemyWeapon);
+        System.out.println(enemyName+ enemyDescription+" attaks"+ player.getPlayerHealth()+ "with"+ enemyWeapon);
 
     }
 
     public void death(){
-        System.out.println(enemyName +"you have been defeated");
+        System.out.println(enemyName + enemyDescription +"you have been defeated");
         dropWeapon();
     }
 
@@ -44,6 +44,6 @@ public class Enemy {
     }
 
     public void dropWeapon(){
-    System.out.println(enemyName + enemyWeapon + " drops" + enemyWeapon);
+    System.out.println(enemyName + enemyDescription + " drops" + enemyWeapon);
     }
 }

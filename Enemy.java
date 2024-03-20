@@ -1,14 +1,14 @@
 public class Enemy {
     private String enemyName;
     private String enemyDescription;
-    private int healthPoints;
+    private int enemyHealthPoints;
     private Weapon enemyWeapon;
 
   //constructor
-    public Enemy(String enemyName, String enemyDescription, int healthPoints, Weapon enemyWeapon){
+    public Enemy(String enemyName, String enemyDescription, int enemyHealthPoints, Weapon enemyWeapon){
         this.enemyName = enemyName;
         this.enemyDescription = enemyDescription;
-        this.healthPoints = healthPoints;
+        this.enemyHealthPoints = enemyHealthPoints;
         this.enemyWeapon = enemyWeapon;
     }
 
@@ -21,8 +21,8 @@ public class Enemy {
         return enemyName;
     }
 
-    public int getHealthPoints() {
-        return healthPoints;
+    public int getEnemyHealthPoints() {
+        return enemyHealthPoints;
     }
 
     /// Attack metoden skal laves færdig
@@ -31,15 +31,18 @@ public class Enemy {
 
     }
 
-    public void death(){
-        System.out.println(enemyName +"you have been defeated");
-        dropWeapon();
+    public boolean enemyDied() {
+        if (enemyHealthPoints <= 0) {
+            System.out.println(enemyName +" have been defeated");
+            dropWeapon();
+            return true;
+        }
+        return false;
     }
-
     public void enemyHit(int damageTaken){
-        healthPoints -= damageTaken;
-        if(healthPoints <= 0){
-            death();
+        enemyHealthPoints -= damageTaken;
+        if(enemyHealthPoints <= 0){
+            enemyDied();
         }
     }
 

@@ -48,7 +48,7 @@ public class Room {
         }
         return null;
     }
-    //Removes/deletes item from current room
+    //Removes/deletes enemy
     public void removeEnemy(Enemy enemy) {
         enemyList.remove(enemy);
     }

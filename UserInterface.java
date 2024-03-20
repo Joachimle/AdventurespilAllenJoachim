@@ -43,7 +43,7 @@ public class UserInterface {
                     System.out.println();
                 }
                 case "attack" -> {
-                    controller.getGamePlayer().playerAttack();
+                    controller.attackSequence(commandParameter);
                     System.out.println("Remaining attacks " + controller.getGamePlayer().getCurrentWeapon().getRemainingUses());
                 }
                 case "equip" -> {

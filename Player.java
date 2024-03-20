@@ -31,6 +31,10 @@ public class Player {
         return currentWeapon;
     }
 
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+
     public ArrayList<Item> getInventory() {
         return inventory;
     }
@@ -112,10 +116,8 @@ public class Player {
             System.out.println(shortName + " is not a weapon!");
         }
     }
-    public void playerAttack() {
-        if (getCurrentWeapon() == null) {
-            System.out.println("You need to equip a weapon first to attack");
-        } else if (getCurrentWeapon().canUse()){
+    public void playerAttack(String enemyName) {
+        if (getCurrentWeapon().canUse()){
             getCurrentWeapon().setRemainingUses(currentWeapon.getRemainingUses()-1);
             setPlayerDamageDone(getCurrentWeapon().getDamagePerAttack());
         } else {

@@ -8,14 +8,12 @@ public class Player {
     private int playerHealth = 0;
     private Weapon currentWeapon;
 
-
     //CONSTRUCTOR
     public Player(Room currentRoom) {
         this.currentRoom = currentRoom;
         this.inventory = new ArrayList<>();
         setPlayerHealth(100);
     }
-
 
     public void playerDied() {
         if (playerHealth <= 0) {
@@ -28,6 +26,10 @@ public class Player {
         return playerHealth;
     }
 
+    public Weapon getCurrentWeapon() {
+        return currentWeapon;
+    }
+
     public void setPlayerHealth(int changeInHealth) {
         playerHealth += changeInHealth;
         if(playerHealth <= 0) { // health range er sat fra 0-100
@@ -35,6 +37,9 @@ public class Player {
         } else if (playerHealth > 100){
             playerHealth = 100;
         }
+    }
+    public void setCurrentWeapon(Weapon weapon){
+        this.currentWeapon = weapon;
     }
     public void eatFoodOrItem(String shortName) {
         Item item = findItemFromInventoryOrCurrentRoom(shortName);
@@ -51,17 +56,15 @@ public class Player {
             }
         } else System.out.println(item + " is not edible");
     }
+
     public void equipWeapon(String shortName){
-        Item equippedWeapon = findItemFromInventoryOrCurrentRoom(shortName);
-        if (equippedWeapon == null){
-            System.out.println("you have nothing to equip");
-        }else if(equippedWeapon instanceof Weapon){
-            currentWeapon = (Weapon)equippedWeapon;
-            getCurrentRoom().removeItem(equippedWeapon);
-            inventory.remove(equippedWeapon);
-            System.out.println("you equipped " + equippedWeapon);
-        }else {
-            System.out.println("you cant equip this item");
+        Item itemToEquip = findItemFromInventory(shortName);
+        if (itemToEquip == null){
+            System.out.println(shortName + " is not in your inventory");
+        } else if (itemToEquip instanceof Weapon) {
+            setCurrentWeapon((Weapon) itemToEquip);
+        } else {
+            System.out.println(shortName + " is not a weapon!");
         }
     }
 
@@ -89,6 +92,14 @@ public class Player {
         }
         return null;
     }
+    public Item findItemFromInventory(String shortName){
+        for (Item i : inventory){
+            if (i.getShortName().equals(shortName)){
+                return i;
+            }
+        }
+        return null;
+    }
 
     //removes item from inventory
     public void dropItemInCurrentRoom(String shortName) {
@@ -104,6 +115,10 @@ public class Player {
 
     }
 
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+
     public void addItemToInventory(Item item) {
         inventory.add(item);
     }
@@ -114,14 +129,6 @@ public class Player {
 
     public ArrayList<Item> getInventory() {
         return inventory;
-    }
-
-    public Room getCurrentRoom() {
-        return currentRoom;
-    }
-
-    public void setCurrentRoom(Room currentRoom) {
-        this.currentRoom = currentRoom;
     }
 
     public String look() {

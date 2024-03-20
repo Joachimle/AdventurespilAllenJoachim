@@ -6,7 +6,7 @@ public class AdventureController {
     //Constructor
     public AdventureController() {
         gameMap = new Map();
-            gamePlayer = new Player(gameMap.getFirstRoom());
+        gamePlayer = new Player(gameMap.getFirstRoom());
     }
 
     //Getters bliver lavet her
@@ -27,14 +27,24 @@ public class AdventureController {
         this.gamePlayer = gamePlayer;
     }
 
-    public void showPlayerInventory () {
+    public void showPlayerInventory() {
         gamePlayer.getInventory();
     }
 
     public String look() {
-       return gamePlayer.look();
+        return gamePlayer.look();
     }
 
+    public void attackEnemy() {
+        getGamePlayer().getCurrentWeapon().getDamageDoneToOpponentPerStrike();
+        if (getGamePlayer().getCurrentWeapon() == null) {
+            System.out.println("You need to equip a weapon first to attack");
 
 
+        } else {
+
+            getGamePlayer().getCurrentWeapon().canUse();
+
+        }
+    }
 }

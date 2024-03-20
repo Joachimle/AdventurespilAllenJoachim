@@ -16,16 +16,8 @@ public class Item {
         return longName;
     }
 
-    public void setShortName(String shortName) {
-        this.shortName = shortName;
-    }
-
-    public void setLongName(String longName) {
-        this.longName = longName;
-    }
-
     @Override
     public String toString() {
-        return getLongName();
+        return getShortName();
     }
 }

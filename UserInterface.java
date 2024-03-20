@@ -73,6 +73,7 @@ public class UserInterface {
                 case "go west", "west", "w" -> {
                     if (controller.getGamePlayer().move("west")){
                         System.out.println("Going west");
+                       // System.out.println(controller.getGamePlayer().getCurrentRoom());
                     } else {
                         System.out.println("You can't go this way");
                     }

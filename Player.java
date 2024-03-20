@@ -115,6 +115,10 @@ public class Player {
 
     }
 
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+
     public void addItemToInventory(Item item) {
         inventory.add(item);
     }

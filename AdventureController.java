@@ -39,7 +39,11 @@ public class AdventureController {
                 //Spiller tager skade baseret på modstanderen våbens skade
                 getGamePlayer().playerHit(getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName).getEnemyWeaponDamage());
                 System.out.println("Ouch! You're hit and down to " + getGamePlayer().getPlayerHealth() + " HP!");
-
+                if (getGamePlayer().playerDied()){
+                    System.out.println("You died and lost the game");
+                } else {
+                    System.out.println("You have now attacked, choose your next action");
+                }
             }
 
         }

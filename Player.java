@@ -82,11 +82,13 @@ public class Player {
         }
         return null;
     }
-    public void playerDied() {
+    public boolean playerDied() {
         if (playerHealth <= 0) {
             System.out.println("you died");
             System.exit(0);
+            return true;
         }
+        return false;
     }
     public void playerHit(int damageTaken){
         playerHealth -= damageTaken;

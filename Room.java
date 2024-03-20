@@ -7,30 +7,15 @@ public class Room {
     private Room north, east, west, south;
     private ArrayList<Item> itemList = new ArrayList<>();
 
-
     //Constructor
     public Room(String roomName, String roomDescription) {
         this.roomDescription = roomDescription;
         this.roomName = roomName;
     }
-    //Methods
 
+    //Methods
     public void addItemToCurrentRoom(Item item) {
         itemList.add(item);
-    }
-
-    public Item lookForItemsInCurrentRoom(String shortName) {
-        for (Item i : itemList) {
-            if (i.getShortName().equals(shortName)) {
-                return i;
-            }
-        }
-        return null;
-    }
-
-    public void deleteItemFromCurrentRoom(String shortName) {
-        Item item = lookForItemsInCurrentRoom(shortName);
-        itemList.remove(item);
     }
 
     public Item searchForItemsInCurrentRoom(String shortName) {
@@ -41,7 +26,7 @@ public class Room {
         }
         return null;
     }
-
+    //Removes/deletes item from current room
     public void removeItem(Item item) {
         itemList.remove(item);
     }

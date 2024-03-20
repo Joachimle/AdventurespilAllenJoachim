@@ -33,14 +33,21 @@ public class AdventureController {
             getGamePlayer().setPlayerDamageDone(gamePlayer.getCurrentWeapon().getDamagePerAttack());
             //Modstanderen tager skade
             getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName).enemyHit(getGamePlayer().getPlayerDamageDone());
+            System.out.println("You attack the enemy for " + getGamePlayer().getPlayerDamageDone() + " damage!");
+            //Hvis modstanderen er død:
             if (getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName).enemyDied()){
+                //Her skal removeEnemy bruges til at fjerne enemy fra rummet
                 System.out.println("Well done!!!");
+                //Hvis ikke modstanderen er død:
             } else {
-                //Spiller tager skade baseret på modstanderen våbens skade
+                //Spiller tager skade baseret på modstanderens våbens skade
+                System.out.println("The enemy fights back!");
                 getGamePlayer().playerHit(getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName).getEnemyWeaponDamage());
                 System.out.println("Ouch! You're hit and down to " + getGamePlayer().getPlayerHealth() + " HP!");
+                //Hvis spilleren er død:
                 if (getGamePlayer().playerDied()){
                     System.out.println("You died and lost the game");
+                    //Hvis ikke spilleren er død
                 } else {
                     System.out.println("You have now attacked, choose your next action");
                 }

@@ -165,6 +165,9 @@ public class Player {
         roomInfo.append("\n");
         roomInfo.append("You find the following items in the room: ");
         roomInfo.append("\n").append(currentRoom.itemsInCurrentRoom());
+        roomInfo.append("\n");
+        roomInfo.append("You spot the following enemies in the room: ");
+        roomInfo.append("\n").append(currentRoom.enemiesInCurrentRoom());
         return roomInfo.toString();
     }
 

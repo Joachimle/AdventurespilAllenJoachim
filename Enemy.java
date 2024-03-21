@@ -2,14 +2,7 @@ public class Enemy {
     private String enemyName;
     private String enemyDescription;
     private int enemyHealthPoints;
-
-    public Weapon getEnemyWeapon() {
-        return enemyWeapon;
-    }
-
     private Weapon enemyWeapon;
-    private int enemyDamageDone;
-    private int enemyWeaponDamage;
 
   //constructor
     public Enemy(String enemyName, String enemyDescription, int enemyHealthPoints, Weapon enemyWeapon){
@@ -20,10 +13,9 @@ public class Enemy {
     }
 
     // getters
-    public String getEnemyDescription() {
-        return enemyDescription;
+    public Weapon getEnemyWeapon() {
+        return enemyWeapon;
     }
-
     public String getEnemyName() {
         return enemyName;
     }
@@ -34,15 +26,6 @@ public class Enemy {
 
     public int getEnemyWeaponDamage(){
         return enemyWeapon.getDamagePerAttack();
-    }
-    public void setEnemyDamageDone(int enemyDamageDone) {
-        this.enemyDamageDone = enemyDamageDone;
-    }
-
-    /// Attack metoden skal laves færdig
-    public void enemyAttack(Player player){
-        System.out.println(enemyName+" attacks");
-        setEnemyDamageDone(getEnemyWeaponDamage());
     }
 
     public boolean enemyDied() {
@@ -58,8 +41,8 @@ public class Enemy {
         }
     }
 
-//    public void dropWeapon(){
-//
-//        System.out.println(enemyName + enemyWeapon + " drops" + enemyWeapon);
-//    }
+    @Override
+    public String toString(){
+        return getEnemyName();
+    }
 }

@@ -6,6 +6,9 @@ public class Map {
     public Map() {
         createMap();
     }
+    public Room getFirstRoom() {
+        return firstRoom;
+    }
 
     //Methods
     public void createMap() {
@@ -85,9 +88,5 @@ public class Map {
         room9.addItemToCurrentRoom(new Food("bananas", " A hand of sweet bananas", 10));
         room9.addItemToCurrentRoom(new Food("pizza", "Neapolitan Pizza ", 30));
         room4.addItemToCurrentRoom(new RangedWeapon("blowgun", " Hunting blow gun with 20 darts ", 20, 10));
-    }
-
-    public Room getFirstRoom() {
-        return firstRoom;
     }
 }

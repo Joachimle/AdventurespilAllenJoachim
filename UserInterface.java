@@ -74,7 +74,6 @@ public class UserInterface {
                 case "go west", "west", "w" -> {
                     if (controller.getGamePlayer().move("west")){
                         System.out.println("Going west");
-                       // System.out.println(controller.getGamePlayer().getCurrentRoom());
                     } else {
                         System.out.println("You can't go this way");
                     }
@@ -133,7 +132,6 @@ public class UserInterface {
 
     //Split-method bruges til at dele kommandoen til switch-casen op i to dele -
     // - så spilleren f.eks. kan skrive "take example" for at tilgå "take" i switch og derefter videresende "example" til take-metoden i Player
-    /////////OBS! Der er en bug, der får programmet til at crashe hvis man ikke skriver noget efter command (f.eks. "equip")/////////
     public String processUserInput(String command){
         String[] userInputArray = command.split(" ");
         if ((userInputArray[0].equals("eat") || userInputArray[0].equals("drink") || userInputArray[0].equals("drop") || userInputArray[0].equals("take") || userInputArray[0].equals("equip") || userInputArray[0].equals("attack")) && userInputArray.length > 1){

@@ -136,8 +136,7 @@ public class UserInterface {
     /////////OBS! Der er en bug, der får programmet til at crashe hvis man ikke skriver noget efter command (f.eks. "equip")/////////
     public String processUserInput(String command){
         String[] userInputArray = command.split(" ");
-        this.command = userInputArray[0];
-        if (this.command.equals("eat") || this.command.equals("drink") || this.command.equals("drop") || this.command.equals("take") || this.command.equals("equip") || this.command.equals("attack")){
+        if ((userInputArray[0].equals("eat") || userInputArray[0].equals("drink") || userInputArray[0].equals("drop") || userInputArray[0].equals("take") || userInputArray[0].equals("equip") || userInputArray[0].equals("attack")) && userInputArray.length > 1){
             commandParameter = userInputArray[1];
             return userInputArray[0];
         }

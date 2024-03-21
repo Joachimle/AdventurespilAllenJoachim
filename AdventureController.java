@@ -18,6 +18,8 @@ public class AdventureController {
         return gamePlayer.look();
     }
 
+
+
     //LAV EN ATTACK METODE DER FORBINDER ENEMY OG PLAYER
     public void attackSequence(String enemyName){
         Enemy currentEnemy = getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName);

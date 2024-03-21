@@ -4,7 +4,7 @@ public class Player {
 
     //Attributes
     private Room currentRoom;
-    private ArrayList<Item> inventory = new ArrayList<>();
+    private ArrayList<Item> inventory;
     private int playerHealth = 0;
     private Weapon currentWeapon;
     private int playerDamageDone;
@@ -124,14 +124,14 @@ public class Player {
             System.out.println(shortName + " is not a weapon!");
         }
     }
-    public void playerAttack(String enemyName) {
-        if (getCurrentWeapon().canUse()){
-            getCurrentWeapon().setRemainingUses(currentWeapon.getRemainingUses()-1);
-            setPlayerDamageDone(getCurrentWeapon().getDamagePerAttack());
-        } else {
-            System.out.println("You can't use your current weapon");
-        }
-    }
+//    public void playerAttack(String enemyName) {
+//        if (getCurrentWeapon().canUse()){
+//            getCurrentWeapon().setRemainingUses(currentWeapon.getRemainingUses()-1);
+//            setPlayerDamageDone(getCurrentWeapon().getDamagePerAttack());
+//        } else {
+//            System.out.println("You can't use your current weapon");
+//        }
+//    }
 
     public void takeItemAndAddToInventory(String itemName) {
         Item item = currentRoom.searchForItemsInCurrentRoom(itemName);

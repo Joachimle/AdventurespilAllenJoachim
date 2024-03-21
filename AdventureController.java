@@ -14,10 +14,6 @@ public class AdventureController {
         return gamePlayer;
     }
 
-    public Map getGameMap() {
-        return gameMap;
-    }
-
     public String look() {
         return gamePlayer.look();
     }

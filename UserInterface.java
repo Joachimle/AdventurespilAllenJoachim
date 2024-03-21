@@ -126,6 +126,9 @@ public class UserInterface {
         System.out.println("Write 'Inventory' to look up your inventory");
         System.out.println("Write 'Eat' or 'drink' followed by the name of a food or drink in your inventory you'd like to consume");
         System.out.println("Write 'Health' to see your current health points");
+        System.out.println("Write 'Equip' followed by the name of a weapon to equip the weapon");
+        System.out.println("Write 'Attack' followed by the name of an enemy to attack the enemy");
+        System.out.println("Write 'Exit' to leave the game");
     }
 
     //Split-method bruges til at dele kommandoen til switch-casen op i to dele -

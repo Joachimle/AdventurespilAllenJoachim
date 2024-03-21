@@ -15,10 +15,6 @@ public abstract class Weapon extends Item {
         return damagePerAttack;
     }
 
-    public void setDamagePerAttack(int damagePerAttack) {
-        this.damagePerAttack = damagePerAttack;
-    }
-
     public int getRemainingUses() {
         return remainingUses;
     }

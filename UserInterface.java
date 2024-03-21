@@ -19,9 +19,9 @@ public class UserInterface {
     public void playGame(){
         System.out.println("*********************************");
         System.out.println("*                               *");
-        System.out.println("*      THE GREAT ADVENTURE      *");
+        System.out.println("*      Alice in Portalland      *");
         System.out.println("*                               *");
-        System.out.println("*******************************\n");
+        System.out.println("*********************************\n");
         userStartMenu();
 
         while (gameIsRunning) {
@@ -109,7 +109,9 @@ public class UserInterface {
     }
 
     public void userStartMenu() {
-        System.out.println("You are now ready to explore the wilderness!\n");
+        System.out.println("You're running through the garden, when you suddenly trip on a small rock.");
+        System.out.println("You tumble down a rabbit-hole and somehow also a glistening portal");
+        System.out.println("You land on your feet and see multiple other portals - thinking to yourself 'What is this freaky place?'.\n");
         System.out.println("Please choose your next action:");
         System.out.println("Write 'Go north' to go north");
         System.out.println("Write 'Go west' to go west");

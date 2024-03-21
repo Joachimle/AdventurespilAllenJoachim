@@ -9,18 +9,26 @@ public class Map {
 
     //Methods
     public void createMap() {
-        Room room1 = new Room("Dragekammeret", "Lysende lavastrømme gløder om æggene under himlen af skæl og flamme, mens drager hviler i dvale.");
-        Room room2 = new Room("Alvekongens Salon", "Krystallignende blomster blomstrer over svajende trætoppe, mens elvere danser mellem lysende støvpartikler.");
-        Room room3 = new Room("Skytårnets Bibliotek", " Skyerne omslutter svævende bøger, mens stjernehimmel-arkiver og himmelblå reoler strækker sig mod uendeligheden af viden.");
-        Room room4 = new Room("Troldmandens Laboratorium", "Boblende kedler og glimtende eliksirer omgiver en hvirvlende portal, hvor magiens pulserende hjerte skaber et kalejdoskopisk skuespil.");
-        Room room5 = new Room("Undervands Paladset", "Perlemorskoraller danner en labyrint omkring svævende slotte, hvor havets folk samles mellem tangskove og skinnende krystalgrotter");
-        Room room6 = new Room("Skovens Hjerte", "Solens stråler filtrerer gennem løvtagets grene og kaster gyldne strejf over mosdækkede stier og levende træers hvisken.");
-        Room room7 = new Room("Hobbithjemmet", "Hyggelige huse gemmer sig blandt farverige blomsterenge og duftende køkkenhaver, hvor lyset danser på skæve stenterrasser.");
-        Room room8 = new Room("Dæmonisk Domstol", "Lavafloder omgiver en ruineret domstol, hvor dæmoniske væsner holder hof og udfælder skæbnesvangre domme under en flammende himmel.");
-        Room room9 = new Room("Englernes Have", "En skyfri himmel bader engle i gyldent lys, mens blomsterbede stråler i alskens farver og en bæk risler mellem ædle sten.");
+
+        Room room1 = new Room("Dragon Chamber", "Glowing streams of lava surrounds the eggs under a sky of scales and flame, while the dragons are resting in slumber.");
+
+        Room room2 = new Room("Elf King's Parlor", "Crystal-like flowers bloom over swaying treetops, while elves dance among luminous dust particles.");
+
+        Room room3 = new Room("Sky Tower's Library", "Clouds envelop floating books, while starry sky archives and sky-blue shelves stretch towards the infinity of knowledge.");
+
+        Room room4 = new Room("Wizard's Laboratory", "Bubbling cauldrons and sparkling elixirs surround a swirling portal, where the pulsating heart of magic creates a kaleidoscopic spectacle.");
+
+        Room room5 = new Room("Underwater Palace", "Mother-of-pearl corals forms a labyrinth around floating castles, where the sea's inhabitants gather among seaweed forests and shining crystal caves.");
+
+        Room room6 = new Room("Heart of the Forest", "Sun rays filter through the branches of the canopy, casting golden streaks over moss-covered paths and whispering living trees.");
+
+        Room room7 = new Room("Hobbit Home", "Cozy houses hide among colorful flower meadows and fragrant kitchen gardens, where light dances on crooked stone terraces.");
+
+        Room room8 = new Room("Demonic Court", "Lava rivers surround a ruined courthouse, where demonic creatures hold court and pronounce fateful judgments under a flaming sky.");
+
+        Room room9 = new Room("Garden of Angels", "A cloudless sky bathes angels in golden light, while flower beds shine in all colors and a brook murmurs between noble stones.");
+
         firstRoom = room1;
-
-
         //ROOM 1
         room1.setEast(room2);
         room1.setSouth(room4);

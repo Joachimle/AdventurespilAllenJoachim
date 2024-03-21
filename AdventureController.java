@@ -20,6 +20,8 @@ public class AdventureController {
 
     //LAV EN ATTACK METODE DER FORBINDER ENEMY OG PLAYER
     public void attackSequence(String enemyName){
+        Enemy currentEnemy = getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName);
+        Room currentRoom = gamePlayer.getCurrentRoom();
         if (gamePlayer.getCurrentWeapon() == null) {
             System.out.println("You need to equip a weapon first to attack");
         } else if (gamePlayer.getCurrentWeapon().canUse()) {
@@ -31,9 +33,15 @@ public class AdventureController {
             getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName).enemyHit(getGamePlayer().getPlayerDamageDone());
             System.out.println("You attack the enemy for " + getGamePlayer().getPlayerDamageDone() + " damage!");
             //Hvis modstanderen er død:
-            if (getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName).enemyDied()){
+            if (currentEnemy.getEnemyHealthPoints() <= 0){
+                getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName).enemyDied();
+                currentRoom.addItemToCurrentRoom(currentEnemy.getEnemyWeapon());
+                currentRoom.removeEnemy(currentEnemy);
+                System.out.println(enemyName +" have been defeated");
                 //Her skal removeEnemy bruges til at fjerne enemy fra rummet
+                //getGamePlayer().getCurrentRoom().removeEnemy(enemyName);
                 System.out.println("Well done!!!");
+                //getGamePlayer().getCurrentRoom().searchForEnemiesInCurrentRoom(enemyName).
                 //Hvis ikke modstanderen er død:
             } else {
                 //Spiller tager skade baseret på modstanderens våbens skade

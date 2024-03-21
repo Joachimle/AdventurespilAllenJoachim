@@ -2,6 +2,11 @@ public class Enemy {
     private String enemyName;
     private String enemyDescription;
     private int enemyHealthPoints;
+
+    public Weapon getEnemyWeapon() {
+        return enemyWeapon;
+    }
+
     private Weapon enemyWeapon;
     private int enemyDamageDone;
     private int enemyWeaponDamage;
@@ -42,8 +47,6 @@ public class Enemy {
 
     public boolean enemyDied() {
         if (enemyHealthPoints <= 0) {
-            System.out.println(enemyName +" have been defeated");
-            dropWeapon();
             return true;
         }
         return false;
@@ -55,7 +58,8 @@ public class Enemy {
         }
     }
 
-    public void dropWeapon(){
-    System.out.println(enemyName + enemyWeapon + " drops" + enemyWeapon);
-    }
+//    public void dropWeapon(){
+//
+//        System.out.println(enemyName + enemyWeapon + " drops" + enemyWeapon);
+//    }
 }
